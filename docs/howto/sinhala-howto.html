@@ -1,0 +1,6778 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>Enabling Unicode Sinhala (à·ƒà·’à¶‚à·„à¶½) in GNU/Linux HOWTO</TITLE
+>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"></HEAD
+><BODY
+CLASS="ARTICLE"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="ARTICLE"
+><DIV
+CLASS="TITLEPAGE"
+><H1
+CLASS="TITLE"
+><A
+NAME="AEN2"
+>Enabling Unicode Sinhala (à·ƒà·’à¶‚à·„à¶½) in GNU/Linux HOWTO</A
+></H1
+><DIV
+CLASS="AUTHORGROUP"
+><A
+NAME="AEN4"
+></A
+><H3
+CLASS="AUTHOR"
+><A
+NAME="AEN5"
+>Harshula Jayasuriya</A
+></H3
+><DIV
+CLASS="AFFILIATION"
+><DIV
+CLASS="ADDRESS"
+><P
+CLASS="ADDRESS"
+><CODE
+CLASS="EMAIL"
+>&#60;<A
+HREF="mailto:harshula at gmail dot com"
+>harshula at gmail dot com</A
+>&#62;</CODE
+></P
+></DIV
+><DIV
+CLASS="ADDRESS"
+><P
+CLASS="ADDRESS"
+></P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="REVHISTORY"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+><TR
+><TH
+ALIGN="LEFT"
+VALIGN="TOP"
+COLSPAN="3"
+><B
+>Revision History</B
+></TH
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+>Revision 9</TD
+><TD
+ALIGN="LEFT"
+>2011/08/29</TD
+><TD
+ALIGN="LEFT"
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+COLSPAN="3"
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+>Revision 8</TD
+><TD
+ALIGN="LEFT"
+>2009/11/26</TD
+><TD
+ALIGN="LEFT"
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+COLSPAN="3"
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+>Revision 7</TD
+><TD
+ALIGN="LEFT"
+>2008/09/01</TD
+><TD
+ALIGN="LEFT"
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+COLSPAN="3"
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+>Revision 6</TD
+><TD
+ALIGN="LEFT"
+>2007/05/13</TD
+><TD
+ALIGN="LEFT"
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+COLSPAN="3"
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+>Revision 5</TD
+><TD
+ALIGN="LEFT"
+>2006/11/20</TD
+><TD
+ALIGN="LEFT"
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+COLSPAN="3"
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+>Revision 4</TD
+><TD
+ALIGN="LEFT"
+>2006/04/03</TD
+><TD
+ALIGN="LEFT"
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+COLSPAN="3"
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+>Revision 3</TD
+><TD
+ALIGN="LEFT"
+>2005/03/06</TD
+><TD
+ALIGN="LEFT"
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+COLSPAN="3"
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+>Revision 2</TD
+><TD
+ALIGN="LEFT"
+>2004/10/07</TD
+><TD
+ALIGN="LEFT"
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+COLSPAN="3"
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+>Revision 1</TD
+><TD
+ALIGN="LEFT"
+>2004/06/05</TD
+><TD
+ALIGN="LEFT"
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+COLSPAN="3"
+></TD
+></TR
+></TABLE
+></DIV
+><HR></DIV
+><DIV
+CLASS="TOC"
+><DL
+><DT
+><B
+>Table of Contents</B
+></DT
+><DT
+>1. <A
+HREF="#ABOUT"
+>About</A
+></DT
+><DT
+>2. <A
+HREF="#INTRODUCTION"
+>Introduction</A
+></DT
+><DD
+><DL
+><DT
+>2.1. <A
+HREF="#INTRO-LEARN-ABOUT-SINHALA"
+>Learn about Sinhala</A
+></DT
+><DT
+>2.2. <A
+HREF="#INTRO-LEARN-ABOUT-UNICODE"
+>Learn about Unicode</A
+></DT
+><DT
+>2.3. <A
+HREF="#INTRO-LEARN-ABOUT-STANDARDS"
+>Learn about Standards</A
+></DT
+><DT
+>2.4. <A
+HREF="#INTRO-MAILING-LISTS"
+>Mailing Lists</A
+></DT
+><DT
+>2.5. <A
+HREF="#INTRO-CONTRIBUTORS"
+>Contributors</A
+></DT
+></DL
+></DD
+><DT
+>3. <A
+HREF="#ENABLING-SINHALA"
+>Enabling Sinhala</A
+></DT
+><DD
+><DL
+><DT
+>3.1. <A
+HREF="#ENABLING-SHORT"
+>Short Answer</A
+></DT
+><DT
+>3.2. <A
+HREF="#ENABLING-LONG"
+>Long Answer</A
+></DT
+></DL
+></DD
+><DT
+>4. <A
+HREF="#DEVELOPER-NOTES"
+>Developer Notes</A
+></DT
+><DD
+><DL
+><DT
+>4.1. <A
+HREF="#DEV-OPEN-TYPE-FONTS"
+>Open Type Fonts</A
+></DT
+><DT
+>4.2. <A
+HREF="#DEV-RENDERER"
+>Renderer (Layout Engine)</A
+></DT
+><DT
+>4.3. <A
+HREF="#DEV-FIREFOX-MOZILLA"
+>Firefox/Mozilla</A
+></DT
+><DT
+>4.4. <A
+HREF="#DEV-OPEN-OFFICE"
+>Open Office</A
+></DT
+><DT
+>4.5. <A
+HREF="#DEV-INPUT-METHODS"
+>Input Methods</A
+></DT
+><DT
+>4.6. <A
+HREF="#DEV-DATABASES"
+>Databases</A
+></DT
+><DT
+>4.7. <A
+HREF="#DEV-LOCALES"
+>Locales</A
+></DT
+><DT
+>4.8. <A
+HREF="#DEV-TRANSLATIONS"
+>Translations</A
+></DT
+><DT
+>4.9. <A
+HREF="#DEV-PACKAGING"
+>Packaging</A
+></DT
+><DT
+>4.10. <A
+HREF="#DEV-DONE"
+>DONE</A
+></DT
+><DT
+>4.11. <A
+HREF="#DEV-TODO"
+>TODO</A
+></DT
+></DL
+></DD
+><DT
+>5. <A
+HREF="#RESOURCES"
+>Resources</A
+></DT
+><DD
+><DL
+><DT
+>5.1. <A
+HREF="#RES-INPUT-METHODS"
+>Input Methods</A
+></DT
+><DT
+>5.2. <A
+HREF="#RES-INTERNATIONALIZATION"
+>Internationalization</A
+></DT
+><DT
+>5.3. <A
+HREF="#RES-LOCALIZATION"
+>Localization</A
+></DT
+><DT
+>5.4. <A
+HREF="#RES-SINHALA"
+>Sinhala</A
+></DT
+><DT
+>5.5. <A
+HREF="#RES-TYPOGRAPHY"
+>Typography</A
+></DT
+><DT
+>5.6. <A
+HREF="#RES-UNICODE"
+>Unicode</A
+></DT
+></DL
+></DD
+><DT
+>6. <A
+HREF="#CONCLUSION"
+>Conclusion</A
+></DT
+></DL
+></DIV
+><DIV
+CLASS="SECT1"
+><H2
+CLASS="SECT1"
+><A
+NAME="ABOUT"
+>1. About</A
+></H2
+><P
+>Sinhala is the language spoken by the majority of Sri Lanka's population. This guide describes the level of Sinhala support available in GNU/Linux. It also describes how to enable improved Sinhala support and the tasks that still require attention.</P
+><P
+>This guide is GNOME and Debian/Ubuntu centric. Most of the explanations and suggestions should also be applicable to other distributions.</P
+></DIV
+><DIV
+CLASS="SECT1"
+><HR><H2
+CLASS="SECT1"
+><A
+NAME="INTRODUCTION"
+>2. Introduction</A
+></H2
+><P
+>The level of Sinhala support in GNU/Linux distributions has improved significantly. Most modern distributions contain the required Unicode Sinhala (SLS1134) font and Sinhala input methods (keyboard layouts). Usually it is simply a matter of installing the relevant packages by following the instructions in <A
+HREF="#ENABLING-SINHALA"
+>Section 3</A
+>.</P
+><P
+>Debian 5.0 (Lenny), Fedora 10 (Cambridge) and Ubuntu 8.10 (Intrepid) contain Unicode Sinhala support on the desktop. This includes the ability to read Unicode Sinhala websites in Firefox, read and write Unicode Sinhala documents in Open Office and send Unicode Sinhala emails in Evolution.</P
+><DIV
+CLASS="SECT2"
+><HR><H3
+CLASS="SECT2"
+><A
+NAME="INTRO-LEARN-ABOUT-SINHALA"
+>2.1. Learn about Sinhala</A
+></H3
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://en.wikipedia.org/wiki/Sinhala"
+TARGET="_top"
+>http://en.wikipedia.org/wiki/Sinhala</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.speaksinhala.com"
+TARGET="_top"
+>http://www.speaksinhala.com</A
+></P
+></LI
+><LI
+><P
+>Silva, A.W.L. (2003). <EM
+>SINHALESE for Beginners</EM
+>. Sri Lanka: Pubudu Printers Kandana</P
+><P
+></P
+><UL
+><LI
+><P
+>The first chapter has excellent coverage of the Sinhala letters.</P
+></LI
+></UL
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT2"
+><HR><H3
+CLASS="SECT2"
+><A
+NAME="INTRO-LEARN-ABOUT-UNICODE"
+>2.2. Learn about Unicode</A
+></H3
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://www.unicode.org"
+TARGET="_top"
+>http://www.unicode.org</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.cl.cam.ac.uk/~mgk25/unicode.html"
+TARGET="_top"
+>UTF-8 and Unicode FAQ for Unix/Linux</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://unicode.org/reports/tr10/"
+TARGET="_top"
+>Unicode Technical Standard #10</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://unicode.org/reports/tr15/"
+TARGET="_top"
+>Unicode Normalization Forms</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://unicode.org/charts/collation/"
+TARGET="_top"
+>Unicode Collation Charts</A
+></P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT2"
+><HR><H3
+CLASS="SECT2"
+><A
+NAME="INTRO-LEARN-ABOUT-STANDARDS"
+>2.3. Learn about Standards</A
+></H3
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://www.loc.gov/standards/iso639-2/"
+TARGET="_top"
+>ISO 639-2: Codes for the Representation of Names of Languages</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.iso.org/iso/en/prods-services/iso3166ma/index.html"
+TARGET="_top"
+>ISO 3166: English country names and code elements</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.unicode.org/iso15924/"
+TARGET="_top"
+>ISO 15924: Codes for the representation of names of scripts</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.unicode.org/charts/PDF/U0D80.pdf"
+TARGET="_top"
+>Unicode Sinhala codepoints</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.siyabas.lk/files/Sri_Lanka_Standard_Sinhala_Character_Code_for_Information_Interchange%2c_SLS_1134_-_2004.pdf"
+TARGET="_top"
+>SLS1134 - Sinhala Character Code for Information Interchange (SCCII)</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.siyabas.lk/files/SLS_1134%2c_Part_1%2c_Sinhala_Collation_Sequence.pdf"
+TARGET="_top"
+>SLS1134 - Sinhala Character Code for Information Interchange (SCCII) - Part 1: Collation Sequence</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.siyabas.lk/files/SLS_1134%2c_Part_2%2c_Requirements_and_Methods_of_Test.pdf"
+TARGET="_top"
+>SLS1134 - Sinhala Character Code for Information Interchange (SCCII) - Part 2 : Requirements and Methods of Test</A
+></P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT2"
+><HR><H3
+CLASS="SECT2"
+><A
+NAME="INTRO-MAILING-LISTS"
+>2.4. Mailing Lists</A
+></H3
+><P
+>The Sinhala GNU/Linux users and developers use these mailing lists for announcements, discussions, debugging and reviews.</P
+><P
+>Therefore, the archives of the mailing lists contain very useful information for both new users and new developers.</P
+><P
+>Please search the archives for the answers to your questions before posting to the mailing lists.</P
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="AEN111"
+>2.4.1. Sinhala Technical List (in English for developers)</A
+></H4
+><P
+></P
+><UL
+><LI
+><P
+>Archive: <A
+HREF="http://sourceforge.net/mailarchive/forum.php?forum_name=sinhala-technical"
+TARGET="_top"
+>http://sourceforge.net/mailarchive/forum.php?forum_name=sinhala-technical</A
+></P
+></LI
+><LI
+><P
+>Subscribe: <A
+HREF="https://lists.sourceforge.net/lists/listinfo/sinhala-technical"
+TARGET="_top"
+>https://lists.sourceforge.net/lists/listinfo/sinhala-technical</A
+></P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="AEN120"
+>2.4.2. Sinhala Unicode List (in Sinhala for developers and users)</A
+></H4
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://groups.google.com/group/sinhala-unicode"
+TARGET="_top"
+>http://groups.google.com/group/sinhala-unicode</A
+></P
+></LI
+></UL
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><HR><H3
+CLASS="SECT2"
+><A
+NAME="INTRO-CONTRIBUTORS"
+>2.5. Contributors</A
+></H3
+><P
+>Many individuals have contributed to the project that began in 2003 on an <A
+HREF="http://www.lug.lk/"
+TARGET="_top"
+>lug.lk</A
+> mailing list. Some of the notable contributors are:</P
+><P
+></P
+><UL
+><LI
+><P
+>Dushara Jayasinghe</P
+></LI
+><LI
+><P
+>Harshula Jayasuriya</P
+></LI
+><LI
+><P
+>Chamath Keppitiyagama</P
+></LI
+><LI
+><P
+>Danishka Navin</P
+></LI
+><LI
+><P
+>Anuradha Ratnaweera</P
+></LI
+><LI
+><P
+>Harsha Senanayake</P
+></LI
+><LI
+><P
+>Naoto Takahashi</P
+></LI
+><LI
+><P
+>Daiki Ueno</P
+></LI
+><LI
+><P
+>Steven White</P
+></LI
+></UL
+></DIV
+></DIV
+><DIV
+CLASS="SECT1"
+><HR><H2
+CLASS="SECT1"
+><A
+NAME="ENABLING-SINHALA"
+>3. Enabling Sinhala</A
+></H2
+><DIV
+CLASS="SECT2"
+><H3
+CLASS="SECT2"
+><A
+NAME="ENABLING-SHORT"
+>3.1. Short Answer</A
+></H3
+><DIV
+CLASS="SECT3"
+><H4
+CLASS="SECT3"
+><A
+NAME="ENABLING-SHORT-DEBIAN"
+>3.1.1. Debian 6.0 (Squeeze) and Above (may work on older versions)</A
+></H4
+><P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>As root/superuser run:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>apt-get install ttf-sinhala-lklug ibus im-switch ibus-m17n m17n-db m17n-contrib</PRE
+></FONT
+></TD
+></TR
+></TABLE
+></LI
+><LI
+><P
+>From your user account (i.e. not root) run:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>rm -f ~/.xinput.d/* ; im-switch -z all_ALL -s ibus</PRE
+></FONT
+></TD
+></TR
+></TABLE
+></LI
+><LI
+><P
+>Logout and login again. Environment variables need to be set/updated (NO NEED TO REBOOT).</P
+></LI
+><LI
+><P
+>From your user account (i.e. not root) select your keyboard layouts by running:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>ibus-setup</PRE
+></FONT
+></TD
+></TR
+></TABLE
+></LI
+></OL
+><P
+>In Debian Wheezy IBus may depend on im-config. im-config conflicts with im-switch, so you will need to run im-config instead of im-switch.</P
+></DIV
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="ENABLING-SHORT-FEDORA"
+>3.1.2. Fedora 10 (Cambridge) and Above (may work on older versions)</A
+></H4
+><P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>As root/superuser run:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>yum groupinstall sinhala-support</PRE
+></FONT
+></TD
+></TR
+></TABLE
+></LI
+><LI
+><P
+>From your user account (i.e. not root), select and configure the Input Method by running:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>im-chooser</PRE
+></FONT
+></TD
+></TR
+></TABLE
+></LI
+></OL
+></DIV
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="ENABLING-SHORT-UBUNTU"
+>3.1.3. Ubuntu 9.10 (Karmic) and Above (may work on older versions)</A
+></H4
+><P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>The Universe repository should already be enabled (<A
+HREF="https://wiki.ubuntu.com/AlwaysEnableUniverseMultiverse"
+TARGET="_top"
+>https://wiki.ubuntu.com/AlwaysEnableUniverseMultiverse</A
+>). If not, first enable the Universe repository.</P
+></LI
+><LI
+><P
+>As root/superuser run:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>apt-get install ttf-sinhala-lklug ibus im-switch ibus-m17n m17n-db m17n-contrib language-pack-si-base</PRE
+></FONT
+></TD
+></TR
+></TABLE
+></LI
+><LI
+><P
+>From your user account (i.e. not root) run:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>rm -f ~/.xinput.d/* ; im-switch -z all_ALL -s ibus</PRE
+></FONT
+></TD
+></TR
+></TABLE
+></LI
+><LI
+><P
+>Logout and login again. Environment variables need to be set/updated (NO NEED TO REBOOT).</P
+></LI
+><LI
+><P
+>From your user account (i.e. not root) select your keyboard layouts by running:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>ibus-setup</PRE
+></FONT
+></TD
+></TR
+></TABLE
+></LI
+></OL
+></DIV
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="AEN194"
+>3.1.4. How to test</A
+></H4
+><P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>Visit <A
+HREF="http://si.wikipedia.org/"
+TARGET="_top"
+>http://si.wikipedia.org/</A
+> and see if the Sinhala letters render correctly.</P
+></LI
+><LI
+><P
+>Copy and paste some of the content from Sinhala Wikipedia to Open Office Writer. Then highlight the Sinhala text and choose the LKLUG font to display them.</P
+></LI
+><LI
+><P
+>To test typing, press Control-space whilst you are running a GNOME application. Then select one of the Sinhala input methods.</P
+></LI
+></OL
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><HR><H3
+CLASS="SECT2"
+><A
+NAME="ENABLING-LONG"
+>3.2. Long Answer</A
+></H3
+><P
+>The instructions in <A
+HREF="#ENABLING-SHORT"
+>Section 3.1</A
+> should be sufficient. If you are using an older version of the distribution or a different distribution, then you may need to read the following section.</P
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="ENABLE-FONTS"
+>3.2.1. Fonts</A
+></H4
+><P
+>If your distribution does not contain a Sinhala font package, then download a Unicode Sinhala font:</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://sinhala.sourceforge.net/files/lklug.ttf"
+TARGET="_top"
+>http://sinhala.sourceforge.net/files/lklug.ttf</A
+></P
+></LI
+></UL
+><P
+>If you are using a modern GNU/Linux version and it has fontconfig installed, all you have to do is make a .fonts directory in your home directory:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>mkdir ~/.fonts</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>and copy the True/Open Type font into that directory.</P
+><P
+>If you want to make the font available to all users of the system, become root and copy the font to:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>/usr/share/fonts</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>In both the above cases, run:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>fc-cache -fv</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>To check which font file provides the Sinhala support, run:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>fc-list :lang=si file</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>Immediately you'll be able to read Unicode Sinhala in these programs (You may have to restart the program.):</P
+><P
+></P
+><UL
+><LI
+><P
+>Anything gtk2/gtk3 based</P
+><P
+></P
+><UL
+><LI
+><P
+>evolution</P
+></LI
+><LI
+><P
+>gedit</P
+></LI
+><LI
+><P
+>gucharmap</P
+></LI
+><LI
+><P
+>Firefox/Mozilla (built with gtk2, FreeType2 and Pango support)</P
+></LI
+></UL
+></LI
+></UL
+><P
+>If you have Pango 1.8.2 and greater, you will have full SLS1134 Sinhala support. Harfbuzz does not support Sinhala nor Indic scripts well at the moment (29/08/2011).</P
+></DIV
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="ENABLE-INPUT-METHODS"
+>3.2.2. Input Methods</A
+></H4
+><P
+>There are a number of different input method infrastructures available on GNU/Linux. In general, first try IBus/m17n and as a last resort XKB.</P
+><P
+>To test multi-lingual input methods in gtk2/gtk3 based programs, run:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>gedit</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>To check which input method systems are available, run:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>im-switch  -l</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>To switch between input method systems, run:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>im-switch -z all_ALL -c</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>Generally choose:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>ibus</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><DIV
+CLASS="SECT4"
+><HR><H5
+CLASS="SECT4"
+><A
+NAME="AEN249"
+>3.2.2.1. Surrounding Text Support (STS)</A
+></H5
+><P
+>Surrounding text support allows the creation of user-friendly input methods. Input methods without surrounding text support are difficult to use when editing existing text. Some applications do not fully support surrounding text. In these circumstances you may want to use an input method that can fallback to pre-edit.</P
+><P
+>m17n-db 1.5.5 and older contain a Wijesekera (si-wijesekera) layout that requires surrounding text support, however, there is also a pre-edit version (si-wijesekera-preedit) that does not. m17n-db 1.6.0, and newer, merged the pre-edit and surrounding text support into one Wijesekera (si-wijesekera) version. It defaults to the pre-edit but the surrounding text support can be enabled via ibus-setup-m17n. Once enabled, it will automatically detect if the application supports surrounding text support. If not supported, it will fallback to pre-edit.</P
+></DIV
+></DIV
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="AEN253"
+>3.2.3. Keyboard Layouts</A
+></H4
+><P
+>If you are unfamiliar with the Wijesekera keyboard layout, here are some recommended keyboard layouts. If you download any of the m17n keyboard layout files, copy it to the correct location and relogin in-order to use it.</P
+><DIV
+CLASS="SECT4"
+><HR><H5
+CLASS="SECT4"
+><A
+NAME="AEN256"
+>3.2.3.1. m17n Transliteration Keyboard Layout</A
+></H5
+><P
+>To familiarise yourself with this keyboard layout, read:</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://www.nongnu.org/sinhala/doc/transliteration/sinhala-transliteration_5.html"
+TARGET="_top"
+>http://www.nongnu.org/sinhala/doc/transliteration/sinhala-transliteration_5.html</A
+></P
+></LI
+></UL
+><P
+>The aforementioned layout is already included in distributions that contain the m17n-contrib package. It does not require surrounding text support.</P
+><P
+>The file can be found at:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>/usr/share/m17n/si-trans.mim</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>The latest version of the keyboard layout can be downloaded from the source repository:</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://git.savannah.gnu.org/cgit/sinhala.git/plain/keymaps/si-trans.mim"
+TARGET="_top"
+>si-trans.mim</A
+></P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT4"
+><HR><H5
+CLASS="SECT4"
+><A
+NAME="AEN271"
+>3.2.3.2. m17n Phonetic Dynamic Keyboard Layout</A
+></H5
+><P
+>To familiarise yourself with this keyboard layout, read:</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://www.nongnu.org/sinhala/doc/keymaps/sinhala-keyboard_4.html"
+TARGET="_top"
+>http://www.nongnu.org/sinhala/doc/keymaps/sinhala-keyboard_4.html</A
+></P
+></LI
+></UL
+><P
+>The aforementioned layout is already included in distributions that contain the m17n-contrib package. It requires surrounding text support.</P
+><P
+>The file can be found at:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>/usr/share/m17n/si-phonetic-dynamic.mim</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>The latest version of the keyboard layout can be downloaded from the source repository:</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://git.savannah.gnu.org/cgit/sinhala.git/plain/keymaps/si-phonetic-dynamic.mim"
+TARGET="_top"
+>si-phonetic-dynamic.mim</A
+></P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT4"
+><HR><H5
+CLASS="SECT4"
+><A
+NAME="AEN286"
+>3.2.3.3. XKB Phonetic Static Keyboard Layout</A
+></H5
+><P
+>To familiarise yourself with this keyboard layout, read:</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://www.nongnu.org/sinhala/doc/keymaps/sinhala-keyboard_3.html"
+TARGET="_top"
+>www.nongnu.org/sinhala/doc/keymaps/sinhala-keyboard_3.html</A
+></P
+></LI
+></UL
+><P
+>The X Keyboard Extension only allows one-to-one mappings between keys and codepoints, therefore rakaaranshaya, yansaya and repaya, which consist of multiple codepoints, have to be manually constructed. See the comments in the Sinhala X Keyboard Extension layout file.</P
+><P
+>The aforementioned layout is already included in distributions that ship with xkeyboard-config (xkb-data) 0.6 and above.</P
+><P
+>The file can be found at:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>/usr/share/X11/xkb/symbols/lk</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>The latest version of the keyboard layout can be downloaded from the source repository:</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://git.savannah.gnu.org/cgit/sinhala.git/plain/keymaps/lk"
+TARGET="_top"
+>lk</A
+></P
+></LI
+></UL
+><P
+>Read the comments in the lk file to see how to create rakaaranshaya, yansaya and repaya.</P
+><P
+>The window manager should come with a program which allows the user to choose multiple keyboard layouts.</P
+><P
+>In the example below I have chosen the SHIFT keys to switch between the Sinhala phonetic layout and the US QWERTY layout. Hold one of the SHIFT keys down and then press the other SHIFT key, this should toggle between the layouts.</P
+><P
+></P
+><UL
+><LI
+><P
+>Using the GUI in GNOME:</P
+><P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>Run:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>gnome-keyboard-properties</PRE
+></FONT
+></TD
+></TR
+></TABLE
+></LI
+><LI
+><P
+>Choose the &#8220;Layouts&#8221; tab and click on the &#8220;Add&#8221; button. This will open a new window which contains a list of layouts ordered by country.</P
+></LI
+><LI
+><P
+>Scroll down the list till you find &#8220;Sri Lanka&#8221; and then highlight it by clicking on it. The Sinhala layout is the Default in the Sri Lanka layouts file. Then press &#8220;OK&#8221;.</P
+></LI
+><LI
+><P
+>Choose the &#8220;Layout Options&#8221; tab and click on the text &#8220;Layout switching&#8221;. A list will expand below this text.</P
+></LI
+><LI
+><P
+>Scroll down the list till you find the text &#8220;Both Shift keys together change layout&#8221;. Click on the corresponding checkbox.</P
+></LI
+><LI
+><P
+>If you wish to use an LED to indicate the toggling of keyboard layouts, click on the text "Use keyboard LED to show alternative layout". A list will expand below this text.</P
+></LI
+><LI
+><P
+>Scroll down the list till you find the text &#8220;ScrollLock LED shows alternative layout&#8221;.</P
+></LI
+></OL
+></LI
+><LI
+><P
+>Using the command line in X:</P
+><P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>In an xterm do:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>setxkbmap -layout "us,lk" -option "grp:shifts_toggle,grp_led:scroll"</PRE
+></FONT
+></TD
+></TR
+></TABLE
+></LI
+></OL
+></LI
+><LI
+><P
+>Alternately, you can directly modify /etc/X11/xorg.conf:</P
+><P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>To add the new lk keyboard layout, look for this line:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>Section "InputDevice"</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>There will probably be two such lines, one for the keyboard and another for the mouse. Go to the keyboard related line. </P
+></LI
+><LI
+><P
+>Then add 'lk' to a line that looks like:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>Option "XkbLayout" "us,lk"</PRE
+></FONT
+></TD
+></TR
+></TABLE
+></LI
+><LI
+><P
+>Also add a mechanism to switch between 'us' and 'lk' and indicate which LED should be used:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>Option "XkbOptions" "grp:shifts_toggle,grp_led:scroll"</PRE
+></FONT
+></TD
+></TR
+></TABLE
+></LI
+><LI
+><P
+>If asked by the window manager, reset keyboard defaults to the X defaults.</P
+></LI
+></OL
+></LI
+></UL
+></DIV
+></DIV
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="AEN345"
+>3.2.4. Character Maps</A
+></H4
+><P
+>You can use a Unicode Character Map program to copy and paste Sinhala characters into your program/document. Available programs are:</P
+><P
+></P
+><UL
+><LI
+><P
+>gucharmap</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="ENABLE-DATABASES"
+>3.2.5. Databases</A
+></H4
+><P
+>The ability to alphabetically sort words in a database is essential. Till recently databases containing Sinhala words could not be sorted according to the Sinhala sorting order as established by SLS1134 - Part 1: Collation Sequence. Sinhala words can be sorted in MySQL (from version 5.2).</P
+><P
+>Instead of running this query:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>SELECT * FROM table1 ORDER BY column1;</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>run a slightly modified query that looks like:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>SELECT * FROM table1 ORDER BY column1 COLLATE utf8_sinhala_ci;</PRE
+></FONT
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="ENABLE-LOCALES"
+>3.2.6. Locales</A
+></H4
+><P
+>The Sinhala locale for Sri Lanka is already included in most distributions. If you wish to view the user interface in Sinhala, then you must first enable the si_LK locale.</P
+><DIV
+CLASS="SECT4"
+><HR><H5
+CLASS="SECT4"
+><A
+NAME="AEN361"
+>3.2.6.1. Debian and Ubuntu</A
+></H5
+><P
+>The supported locales are listed in the file:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>/usr/share/i18n/SUPPORTED</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>The locale definition is available in:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>/usr/share/i18n/locales/</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>These files are provided by the <EM
+>locales</EM
+> package.</P
+><P
+>The locale definitions need to be compiled before they can be used. To compile a particular locale, first edit:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>/etc/locale.gen</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>This will involve uncommenting the required locale, e.g.:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+># sid_ET UTF-8
+si_LK UTF-8
+# sk_SK ISO-8859-2 </PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>Then run the program:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>/usr/sbin/locale-gen</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>Following that step you can then see what a particular program looks like when it is localised:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>LANG=si_LK.UTF-8 gedit
+LANG=fr_FR.UTF-8 gedit</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>The actual translated message strings are stored in:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>/usr/share/locale/&#60;ISO639 2 character lang code&#62;/LC_MESSAGES/</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>Each program adds a file containing translated message strings.</P
+><P
+>The default locale is set in the file:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>/etc/default/locale</PRE
+></FONT
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="SECT4"
+><HR><H5
+CLASS="SECT4"
+><A
+NAME="AEN382"
+>3.2.6.2. Collation</A
+></H5
+><P
+>To sort Sinhala words, run:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>LC_ALL=si_LK.utf8 sort</PRE
+></FONT
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="ENABLE-OPEN-OFFICE"
+>3.2.7. Open Office</A
+></H4
+><P
+>By default Open Office chooses the first Sinhala font regardless of its completeness. Therefore, you may have to highlight the Sinhala text and select a complete Unicode Sinhala font such as the LKLUG font.</P
+></DIV
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="ENABLE-LATEX"
+>3.2.8. LaTeX</A
+></H4
+><P
+>TeX Live, 2009 release, should contain a version of XeTeX with Unicode Sinhala support.</P
+><P
+>A less preferable option is to download sintex:</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://www.ucsc.cmb.ac.lk/People/cik/sintex-0.2.0.tar.gz"
+TARGET="_top"
+>http://www.ucsc.cmb.ac.lk/People/cik/sintex-0.2.0.tar.gz</A
+></P
+></LI
+></UL
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="SECT1"
+><HR><H2
+CLASS="SECT1"
+><A
+NAME="DEVELOPER-NOTES"
+>4. Developer Notes</A
+></H2
+><P
+></P
+><UL
+><LI
+><P
+>Savannah Sinhala Project: <A
+HREF="http://savannah.nongnu.org/projects/sinhala/"
+TARGET="_top"
+>http://savannah.nongnu.org/projects/sinhala/</A
+></P
+></LI
+><LI
+><P
+>Sourceforge Sinhala Project: <A
+HREF="http://sourceforge.net/projects/sinhala/"
+TARGET="_top"
+>http://sourceforge.net/projects/sinhala/</A
+></P
+></LI
+></UL
+><DIV
+CLASS="SECT2"
+><HR><H3
+CLASS="SECT2"
+><A
+NAME="DEV-OPEN-TYPE-FONTS"
+>4.1. Open Type Fonts</A
+></H3
+><P
+>You can use these PHP and Python scripts to generate Unicode Sinhala letters:</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://git.savannah.gnu.org/cgit/sinhala.git/plain/utils/gen-unicode-sinhala.php"
+TARGET="_top"
+>gen-unicode-sinhala.php</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://git.savannah.gnu.org/cgit/sinhala.git/plain/utils/gen-unicode-sinhala.py"
+TARGET="_top"
+>gen-unicode-sinhala.py</A
+></P
+></LI
+></UL
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="AEN416"
+>4.1.1. List of feature tags</A
+></H4
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://partners.adobe.com/public/developer/opentype/index_tag3.html"
+TARGET="_top"
+>http://partners.adobe.com/public/developer/opentype/index_tag3.html</A
+></P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="AEN422"
+>4.1.2. Glyph Naming</A
+></H4
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://partners.adobe.com/public/developer/en/opentype/aglfn13.txt"
+TARGET="_top"
+>http://partners.adobe.com/public/developer/en/opentype/aglfn13.txt</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://partners.adobe.com/public/developer/opentype/index_glyph.html"
+TARGET="_top"
+>http://partners.adobe.com/public/developer/opentype/index_glyph.html</A
+></P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="AEN431"
+>4.1.3. Indic</A
+></H4
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://www.microsoft.com/typography/SpecificationsOverview.mspx"
+TARGET="_top"
+>http://www.microsoft.com/typography/SpecificationsOverview.mspx</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://unicode.org/faq/indic.html"
+TARGET="_top"
+>Indic FAQ at Unicode.org</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://unicode.org/~emuller/iwg/"
+TARGET="_top"
+>Indic Working Group at Unicode.org</A
+></P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="AEN443"
+>4.1.4. How GNU FreeFont obtained Sinhala glyphs</A
+></H4
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://mail.gnu.org/archive/html/freefont-bugs/2003-03/msg00000.html"
+TARGET="_top"
+>http://mail.gnu.org/archive/html/freefont-bugs/2003-03/msg00000.html</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://mail.gnu.org/archive/html/freefont-bugs/2003-04/msg00001.html"
+TARGET="_top"
+>http://mail.gnu.org/archive/html/freefont-bugs/2003-04/msg00001.html</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://mail.gnu.org/archive/html/freefont-bugs/2003-05/msg00005.html"
+TARGET="_top"
+>http://mail.gnu.org/archive/html/freefont-bugs/2003-05/msg00005.html</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://mail.gnu.org/archive/html/freefont-bugs/2003-08/msg00002.html"
+TARGET="_top"
+>http://mail.gnu.org/archive/html/freefont-bugs/2003-08/msg00002.html</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://lists.gnu.org/archive/html/freefont-bugs/2009-02/msg00000.html"
+TARGET="_top"
+>http://lists.gnu.org/archive/html/freefont-bugs/2009-02/msg00000.html</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://savannah.gnu.org/forum/forum.php?forum_id=6518"
+TARGET="_top"
+>http://savannah.gnu.org/forum/forum.php?forum_id=6518</A
+></P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="AEN464"
+>4.1.5. Development Info</A
+></H4
+><P
+>If you wish to use TeX font glyphs to create a new font, mftrace will be useful. In most circumstances fontforge alone will be sufficient for most of your needs.</P
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><HR><H3
+CLASS="SECT2"
+><A
+NAME="DEV-RENDERER"
+>4.2. Renderer (Layout Engine)</A
+></H3
+><P
+>The top of tree Pango (since 1.8.2) &#38; ICU (since 3.6) now support SLS1134.</P
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="AEN470"
+>4.2.1. Pango</A
+></H4
+><P
+>Pango's Indic renderer is based on ICU's Indic renderer.</P
+><P
+>The original patch to add Sinhala support was created by Harsha Senanayake for ICU <A
+NAME="AEN474"
+HREF="#FTN.AEN474"
+><SPAN
+CLASS="footnote"
+>[1]</SPAN
+></A
+>and later ported to Pango. The Pango patch was ported to the latest version of Pango by Chamath Keppitiyagama. It was submitted to bugzilla by Anuradha Ratnaweera<A
+NAME="AEN477"
+HREF="#FTN.AEN477"
+><SPAN
+CLASS="footnote"
+>[2]</SPAN
+></A
+>. Harshula Jayasuriya modified the Pango state table &#38; ZWJ handling <A
+NAME="AEN480"
+HREF="#FTN.AEN480"
+><SPAN
+CLASS="footnote"
+>[3]</SPAN
+></A
+> &#38; <A
+NAME="AEN483"
+HREF="#FTN.AEN483"
+><SPAN
+CLASS="footnote"
+>[4]</SPAN
+></A
+>. </P
+><P
+>The Pango code for Sinhala and Indic rendering is common and can be found in the Pango source at:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>modules/indic/</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>One of the most important files to understand is:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>modules/indic/indic-ot-class-tables.c</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>Particularly how the function:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>indic_ot_find_syllable()</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>works.</P
+><P
+>Next have a look at the file:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>modules/indic/indic-ot.c</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>and the function:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>indic_ot_reorder()</PRE
+></FONT
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="AEN497"
+>4.2.2. ICU</A
+></H4
+><P
+>Owen Taylor (Pango) submitted the Pango Sinhala patch to the ICU project <A
+NAME="AEN500"
+HREF="#FTN.AEN500"
+><SPAN
+CLASS="footnote"
+>[5]</SPAN
+></A
+>. Eric Mader (ICU) ported the Pango patch to ICU and checked-in the changes to ICU 3.6. Then Eric added the state table &#38; ZWJ modifications from Pango to ICU 3.6 <A
+NAME="AEN503"
+HREF="#FTN.AEN503"
+><SPAN
+CLASS="footnote"
+>[6]</SPAN
+></A
+> &#38; <A
+NAME="AEN506"
+HREF="#FTN.AEN506"
+><SPAN
+CLASS="footnote"
+>[7]</SPAN
+></A
+>.</P
+><DIV
+CLASS="SECT4"
+><HR><H5
+CLASS="SECT4"
+><A
+NAME="AEN509"
+>4.2.2.1. Split dependent vowel modifier (diga o) issue</A
+></H5
+><P
+>There was an issue with U+0DDD (dependent vowel diga o) that can cause Open Office to crash. Opening this text file will crash Open Office and ICU 3.6:</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://git.savannah.gnu.org/cgit/sinhala.git/plain/patches/icu-crash-testcase-dv-oo.txt"
+TARGET="_top"
+>icu-crash-testcase-dv-oo.txt</A
+></P
+></LI
+></UL
+><P
+>The worstCaseExpansion for Sinhala was set to 3 when it should have been set to 4. The dependent vowel 'oo' (U+0DDD) consists of (kombuva)(dotted-circle)(aela-pilla)(al-lakuna) which are 4 glyphs. As a result of the worstCaseExpansion being 3, memory was probably being allocated for 3 glyphs when memory was required for 4 glyphs. The actual crash occurred when unallocated memory was being freed.</P
+><P
+>Caolan McNamara also found this bug and fixed it first. <A
+NAME="AEN518"
+HREF="#FTN.AEN518"
+><SPAN
+CLASS="footnote"
+>[8]</SPAN
+></A
+></P
+></DIV
+><DIV
+CLASS="SECT4"
+><HR><H5
+CLASS="SECT4"
+><A
+NAME="AEN521"
+>4.2.2.2. Call Tree</A
+></H5
+><P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>source/layoutex/ParagraphLayout.cpp</P
+><P
+>ParagraphLayout::ParagraphLayout(const LEUnicode chars[], le_int32 count, const FontRuns *fontRuns, const ValueRuns *levelRuns, const ValueRuns *scriptRuns, const LocaleRuns *localeRuns, UBiDiLevel paragraphLevel, le_bool vertical, LEErrorCode &#38;status)</P
+><P
+></P
+><OL
+TYPE="a"
+><LI
+><P
+>source/layout/LayoutEngine.cpp: </P
+><P
+>LayoutEngine *LayoutEngine::layoutEngineFactory(const LEFontInstance *fontInstance, le_int32 scriptCode, le_int32 languageCode, LEErrorCode &#38;success)</P
+></LI
+><LI
+><P
+>LayoutEngine *LayoutEngine::layoutEngineFactory(const LEFontInstance *fontInstance, le_int32 scriptCode, le_int32 languageCode, le_int32 typoFlags, LEErrorCode &#38;success)</P
+><P
+></P
+><UL
+><LI
+><P
+>IndicOpenTypeLayoutEngine::IndicOpenTypeLayoutEngine(const LEFontInstance *fontInstance, le_int32 scriptCode, le_int32 languageCode, le_int32 typoFlags, const GlyphSubstitutionTableHeader *gsubTable) </P
+></LI
+><LI
+><P
+>IndicOpenTypeLayoutEngine::IndicOpenTypeLayoutEngine(const LEFontInstance *fontInstance, le_int32 scriptCode, le_int32 languageCode, le_int32 typoFlags)</P
+></LI
+></UL
+></LI
+></OL
+></LI
+><LI
+><P
+>source/layout/LayoutEngine.cpp</P
+><P
+>le_int32 LayoutEngine::layoutChars(const LEUnicode chars[], le_int32 offset, le_int32 count, le_int32 max, le_bool rightToLeft, float x, float y, LEErrorCode &#38;success)</P
+><P
+></P
+><OL
+TYPE="a"
+><LI
+><P
+>le_int32 LayoutEngine::computeGlyphs(const LEUnicode chars[], le_int32 offset, le_int32 count, le_int32 max, le_bool rightToLeft, LEGlyphStorage &#38;glyphStorage, LEErrorCode &#38;success)</P
+><P
+></P
+><OL
+TYPE="i"
+><LI
+><P
+>source/layout/IndicLayoutEngine.cpp</P
+><P
+>le_int32 IndicOpenTypeLayoutEngine::characterProcessing(const LEUnicode chars[], le_int32 offset, le_int32 count, le_int32 max, le_bool rightToLeft, LEUnicode *&#38;outChars, LEGlyphStorage &#38;glyphStorage, LEErrorCode &#38;success)</P
+><P
+></P
+><OL
+TYPE="A"
+><LI
+><P
+>source/layout/IndicReordering.cpp</P
+><P
+>le_int32 IndicReordering::reorder(const LEUnicode *chars, le_int32 charCount, le_int32 scriptCode, LEUnicode *outChars, LEGlyphStorage &#38;glyphStorage, MPreFixups **outMPreFixups)</P
+></LI
+></OL
+></LI
+></OL
+></LI
+></OL
+></LI
+><LI
+><P
+>engine-&#62;getGlyphs(fStyleRunInfo[run].glyphs, layoutStatus);</P
+></LI
+><LI
+><P
+>engine-&#62;getGlyphPositions(fStyleRunInfo[run].positions, layoutStatus);</P
+></LI
+><LI
+><P
+>engine-&#62;getCharIndices(&#38;fGlyphToCharMap[glyphBase], runStart, layoutStatus);</P
+></LI
+></OL
+></DIV
+></DIV
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="AEN558"
+>4.2.3. Harfbuzz</A
+></H4
+><P
+>Harfbuzz does not support Sinhala nor Indic scripts well at the moment (29/08/2011). The Indic module (hb-ot-shape-complex-indic.cc) needs a lot more work to be useful.</P
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><HR><H3
+CLASS="SECT2"
+><A
+NAME="DEV-FIREFOX-MOZILLA"
+>4.3. Firefox/Mozilla</A
+></H3
+><P
+>Interestingly, Debian, Fedora Core and Ubuntu decided to address enabling Pango in Firefox in completely different ways.</P
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="AEN564"
+>4.3.1. Debian</A
+></H4
+><P
+>Since Debian 4.0 (Etch), Pango is enabled by default.</P
+></DIV
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="AEN567"
+>4.3.2. Ubuntu</A
+></H4
+><DIV
+CLASS="SECT4"
+><H5
+CLASS="SECT4"
+><A
+NAME="AEN569"
+>4.3.2.1. Ubuntu 5.10</A
+></H5
+><P
+>Ubuntu 5.10 enabled Pango by default. Have a look at:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>/usr/bin/mozilla-firefox </PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>which contains the code:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>##
+## Set MOZ_ENABLE_PANGO
+##
+MOZ_ENABLE_PANGO=1
+export MOZ_ENABLE_PANGO&#13;</PRE
+></FONT
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="SECT4"
+><HR><H5
+CLASS="SECT4"
+><A
+NAME="AEN575"
+>4.3.2.2. Ubuntu 6.06</A
+></H5
+><P
+>On the other hand Ubuntu 6.06, decided to disable Pango in Firefox by default except for a pre-determined list of locales. The extensive discussion can be found here:</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="https://launchpad.net/distros/ubuntu/+source/firefox/+bug/32561"
+TARGET="_top"
+>https://launchpad.net/distros/ubuntu/+source/firefox/+bug/32561</A
+></P
+></LI
+></UL
+><P
+>Have a look at:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>/usr/bin/mozilla-firefox </PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>which contains the code:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>if [ "x${MOZ_DISABLE_PANGO}" = x ]; then
+    if egrep '^(bn|gu|hi|kn|ml|mr|ne|pa|ta|te)_' \
+        /var/lib/locales/supported.d/*[^~] &#62;/dev/null 2&#62;&#38;1; then
+        MOZ_DISABLE_PANGO=0
+    else
+        MOZ_DISABLE_PANGO=1
+    fi
+    export MOZ_DISABLE_PANGO
+fi
+if [ "x${MOZ_DISABLE_PANGO}" = x0 ]; then
+    unset MOZ_DISABLE_PANGO
+fi</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>This means that Ubuntu 6.06 users that need Pango enabled in Firefox need to set an environment variable:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>MOZ_DISABLE_PANGO=0</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>You can see the difference by running Firefox at the command line like so:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+># MOZ_DISABLE_PANGO=0 mozilla-firefox</PRE
+></FONT
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="AEN590"
+>4.3.3. Ubuntu 6.10 &#38; Above</A
+></H4
+><P
+>Ubuntu 6.10 users can enable Pango in Firefox by setting an environment variable:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>MOZ_DISABLE_PANGO=0</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>Or by simply installing the Ubuntu package:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>language-pack-si-base</PRE
+></FONT
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="AEN596"
+>4.3.4. Fedora Core</A
+></H4
+><P
+>Since Fedora Core 4, Pango is enabled in Firefox by default. In order to disable Pango in Firefox an environment variable has to be set:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>MOZ_DISABLE_PANGO=1</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>You can see the difference by running Firefox at the command line like so:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+># MOZ_DISABLE_PANGO=1 firefox</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>Have a look at:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>/usr/bin/firefox </PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>for an explanation.</P
+><DIV
+CLASS="SECT4"
+><HR><H5
+CLASS="SECT4"
+><A
+NAME="AEN605"
+>4.3.4.1. Fedora Core 3</A
+></H5
+><A
+NAME="AEN607"
+></A
+><BLOCKQUOTE
+CLASS="BLOCKQUOTE"
+><P
+>Firefox and Mozilla can be enabled with pango rendering support, which enables many text layout features, including the rendering of CTL (Complex Text Layout) such as Indic languages. To enable this, set the following environment variable when running Firefox or Mozilla:</P
+><P
+>MOZ_ENABLE_PANGO=1 <A
+NAME="AEN610"
+HREF="#FTN.AEN610"
+><SPAN
+CLASS="footnote"
+>[9]</SPAN
+></A
+></P
+></BLOCKQUOTE
+></DIV
+><DIV
+CLASS="SECT4"
+><HR><H5
+CLASS="SECT4"
+><A
+NAME="AEN613"
+>4.3.4.2. Fedora Core 4 <A
+NAME="AEN615"
+HREF="#FTN.AEN615"
+><SPAN
+CLASS="footnote"
+>[10]</SPAN
+></A
+></A
+></H5
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>##
+## Set MOZ_ENABLE_PANGO is no longer used because Pango is enabled by default
+## you may use MOZ_DISABLE_PANGO=1 to force disabling of pango
+##
+#MOZ_DISABLE_PANGO=1
+#export MOZ_DISABLE_PANGO</PRE
+></FONT
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="SECT4"
+><HR><H5
+CLASS="SECT4"
+><A
+NAME="AEN619"
+>4.3.4.3. Fedora Core 5 <A
+NAME="AEN621"
+HREF="#FTN.AEN621"
+><SPAN
+CLASS="footnote"
+>[11]</SPAN
+></A
+></A
+></H5
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>##
+## In order to better support certain scripts (such as Indic and some CJK 
+## scripts), Fedora builds its Firefox, with permission from the Mozilla 
+## Corporation, with the Pango system as its text renderer.  This change 
+## is known to break rendering of MathML, and may negatively impact 
+## performance on some pages.  To disable the use of Pango, set 
+## MOZ_DISABLE_PANGO=1 in your environment before launching Firefox.
+##
+#
+# MOZ_DISABLE_PANGO=1
+# export MOZ_DISABLE_PANGO
+#</PRE
+></FONT
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="AEN625"
+>4.3.5. Epiphany Browser</A
+></H4
+><P
+>Changelog:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>2006-01-27  Christian Persch  &#60;chpe at cvs dot gnome dot org&#62;
+        * src/ephy-main.c: (main):
+        Disable pango rendering by default, unless MOZ_ENABLE_PANGO env
+        var is set. Bug #328844.&#13;</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>src/ephy-main.c:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>        /* Work around bug #328844, and avoid the gecko+pango performance problem */
+        env = g_getenv ("MOZ_ENABLE_PANGO");
+        enable_pango = env != NULL &#38;&#38;
+                       env[0] != '\0' &#38;&#38;
+                       g_ascii_strtoull (env, NULL, 10) != 0;
+        if (eel_gconf_get_boolean (CONF_GECKO_ENABLE_PANGO))
+        {
+                g_print ("NOTE: Enabling gecko pango renderer; this may cause performance degradation.\n"
+                         "You can set " CONF_GECKO_ENABLE_PANGO " to \"false\" to disable it.\n");
+        }
+        else if (!enable_pango)
+        {
+                g_setenv ("MOZ_DISABLE_PANGO", "1", TRUE);
+        }</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>Epiphany also has a file, data/epiphany-pango.schemas containing a list of locales which require Pango to be enabled by default.</P
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><HR><H3
+CLASS="SECT2"
+><A
+NAME="DEV-OPEN-OFFICE"
+>4.4. Open Office</A
+></H3
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://wiki.services.openoffice.org/wiki/Debugging"
+TARGET="_top"
+>http://wiki.services.openoffice.org/wiki/Debugging</A
+></P
+></LI
+></UL
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="AEN638"
+>4.4.1. Open Office 2.0.4</A
+></H4
+><P
+>Whilst working on the patches for adding Sinhala support to ICU, the renderer of Open Office, I observed that the ZWJ characters do not appear to reach ICU <A
+NAME="AEN641"
+HREF="#FTN.AEN641"
+><SPAN
+CLASS="footnote"
+>[12]</SPAN
+></A
+>. I demonstrated this at the Red Hat Sri Lanka office (approx. 21/04/2006). Red Hat Sri Lanka then conveyed this to Red Hat India on 27/07/2006. A few days later Red Hat India opened a bug<A
+NAME="AEN644"
+HREF="#FTN.AEN644"
+><SPAN
+CLASS="footnote"
+>[13]</SPAN
+></A
+>. Then, Caolan McNamara found the Open Office file that filters ZWJ and ZWNJ <A
+NAME="AEN647"
+HREF="#FTN.AEN647"
+><SPAN
+CLASS="footnote"
+>[14]</SPAN
+></A
+>.</P
+><P
+>The source file:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>vcl/source/gdi/sallayout.cxx</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>contains a function:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>inline bool IsControlChar( sal_Unicode cChar )</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>This function tells a caller that characters U+200B to U+200F are control characters.</P
+><P
+>In the source file:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>linguistic/source/misc.cxx</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>two functions,</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>static INT16 GetOrigWordPos( const OUString &#38;rOrigWord, INT16 nPos )</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>and</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>INT32 GetPosInWordToCheck( const OUString &#38;rTxt, INT32 nPos )</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>call </P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>inline bool IsControlChar( sal_Unicode cChar )</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>when doing lingustic analysis for what appears to be spelling purposes. Even found some comments written in, I assume, German.</P
+><P
+>In the source file:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>vcl/source/gdi/sallayout.cxx</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>there is a function:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>void ImplLayoutArgs::AddRun( int nCharPos0, int nCharPos1, bool bRTL )</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>which calls the function:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>inline bool IsControlChar( sal_Unicode cChar )</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>it's purpose is to:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>// add a run after splitting it up to get rid of control chars</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>It should be noted that this function handles RTL text in a different way to LTR text. My initial reaction is that should not be the case. However, I have not looked into it any further.</P
+><P
+>Compiling Open Office 2.0.4 on Debian Etch on a Pentium M 2.13 GHz with 1 GiB RAM took approximately 10 hours and required 10 GBs of additional hard drive space for the source and the compiled files.</P
+></DIV
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="AEN674"
+>4.4.2. Open Office 2.1</A
+></H4
+><P
+>Open Office 2.1 does not filter ZWJ, therefore, it supports Unicode Sinhala.</P
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><HR><H3
+CLASS="SECT2"
+><A
+NAME="DEV-INPUT-METHODS"
+>4.5. Input Methods</A
+></H3
+><P
+>The recommended infrastructures are XKB, for simple one-to-one keyboard layouts, and IBus<A
+NAME="AEN680"
+HREF="#FTN.AEN680"
+><SPAN
+CLASS="footnote"
+>[15]</SPAN
+></A
+>/m17n<A
+NAME="AEN683"
+HREF="#FTN.AEN683"
+><SPAN
+CLASS="footnote"
+>[16]</SPAN
+></A
+> for complex keyboard layouts. XKB is a component of Xorg.</P
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="AEN686"
+>4.5.1. Syllable Segmentation <A
+NAME="AEN688"
+HREF="#FTN.AEN688"
+><SPAN
+CLASS="footnote"
+>[17]</SPAN
+></A
+></A
+></H4
+><P
+>Sinhala letters which define the start of a new 'syllable':</P
+><P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>All independent vowels (U+0d85 - U+0d96)</P
+></LI
+><LI
+><P
+>Kombuva (U+0dd9) - except if preceded by a kombuva.</P
+></LI
+><LI
+><P
+>All consonants (U+0d9a - U+0dc6) - except if preceded by kombuva or kombuva deka (U+0ddb)</P
+></LI
+><LI
+><P
+>Kunddaliya (U+0df4)</P
+></LI
+><LI
+><P
+>All non-Sinhala characters/codepoints - except ZWJ (U+200D)</P
+></LI
+></OL
+></DIV
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="AEN703"
+>4.5.2. Keyboard</A
+></H4
+><P
+>You can use <EM
+>showkey</EM
+> in linux to display the scancode.</P
+><P
+></P
+><UL
+><LI
+><P
+>57 - space</P
+></LI
+><LI
+><P
+>56 - left alt</P
+></LI
+><LI
+><P
+>100 - right alt</P
+></LI
+><LI
+><P
+>29 - left ctrl</P
+></LI
+><LI
+><P
+>97 - right ctrl</P
+></LI
+><LI
+><P
+>42 - left shift</P
+></LI
+><LI
+><P
+>54 - right shift</P
+></LI
+></UL
+><P
+>Look in the linux source:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>drivers/char/keyboard.c</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>Look for the function:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>getkeycode()</PRE
+></FONT
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="AEN726"
+>4.5.3. XKB - adding a new keyboard layout</A
+></H4
+><P
+>All you need to do is just copy the keyboard layout file into the correct directory:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>/etc/X11/xkb/symbols/</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>or</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>/etc/X11/xkb/symbols/pc/</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>or</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>/usr/share/X11/xkb/symbols</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>However, for completeness some files in these directories:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>/etc/X11/</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>or</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>/usr/X11R6/lib/X11/</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>or</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>/usr/share/X11/</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>need to be modified, namely these files:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>xkb/rules/{xorg,xfree86}
+xkb/rules/{xorg,xfree86}.lst
+xkb/rules/{xorg,xfree86}.xml
+xkb/symbols.dir</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>To test a loaded keyboard layout:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>setxkbmap -print | xkbcomp -w 10 -xkb - &#60;outfile&#62;</PRE
+></FONT
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="AEN744"
+>4.5.4. IBus</A
+></H4
+><P
+>IBus can be used as the frontend, which is exposed to the user, and the backend that maps keycodes to codepoints. Or IBus can be used as a frontend for other backends. e.g. m17n can be a backend via the ibus-m17n engine.</P
+><P
+>ibus 1.3.99.20110817 and ibus-m17n 1.3.3 support Surrounding Text Support (STS).</P
+></DIV
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="AEN748"
+>4.5.5. m17n</A
+></H4
+><P
+>The m17n backend keyboard layout definition file is a text file. The documentation can be found:</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://www.m17n.org/common/m17n-docs-en/m17nDBFormat.html#mdbIM"
+TARGET="_top"
+>http://www.m17n.org/common/m17n-docs-en/m17nDBFormat.html#mdbIM</A
+></P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="AEN755"
+>4.5.6. xmodmap</A
+></H4
+><P
+>The xmodmap keyboard layout is not fully functional, hence it is recommended you use the X Keyboard Extension keyboard layout. To familiarise yourself with this keyboard layout, read:</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://www.nongnu.org/sinhala/doc/keymaps/sinhala-keyboard_3.html"
+TARGET="_top"
+>http://www.nongnu.org/sinhala/doc/keymaps/sinhala-keyboard_3.html</A
+></P
+></LI
+></UL
+><P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>Download the keyboard layout from:</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://git.savannah.gnu.org/cgit/sinhala.git/plain/keymaps/sin.xmodmap"
+TARGET="_top"
+>sin.xmodmap</A
+></P
+></LI
+></UL
+></LI
+><LI
+><P
+>Then run xmodmap:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>xmodmap sin.xmodmap</PRE
+></FONT
+></TD
+></TR
+></TABLE
+></LI
+></OL
+></DIV
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="AEN772"
+>4.5.7. gvim</A
+></H4
+><P
+>To familiarise yourself with this keyboard layout, read:</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://www.nongnu.org/sinhala/doc/keymaps/sinhala-keyboard_3.html"
+TARGET="_top"
+>http://www.nongnu.org/sinhala/doc/keymaps/sinhala-keyboard_3.html</A
+></P
+></LI
+></UL
+><P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>Download the keyboard layout and redirector from:</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://git.savannah.gnu.org/cgit/sinhala.git/plain/keymaps/sinhala-phonetic_utf-8.vim"
+TARGET="_top"
+>sinhala-phonetic_utf-8.vim</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://git.savannah.gnu.org/cgit/sinhala.git/plain/keymaps/sinhala.vim"
+TARGET="_top"
+>sinhala.vim</A
+></P
+></LI
+></UL
+></LI
+><LI
+><P
+>Copy the keyboard layout and redirector to ~/.vim/keymap/</P
+></LI
+><LI
+><P
+>Start gvim</P
+></LI
+><LI
+><P
+>Need to disable the menu so that you can use the 'alt' key:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>set guioptions-=m</PRE
+></FONT
+></TD
+></TR
+></TABLE
+></LI
+><LI
+><P
+>Select the new keyboard layout, using the redirector, by typing:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>set keymap=sinhala</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>or select the new keyboard layout directly by typing:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>set keymap=sinhala-phonetic_utf-8</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>To toggle between the Sinhala keyboard layout and the standard ASCII keyboard layout, press &#60;Ctrl&#62; &#60;6&#62; whilst in insert mode.</P
+></LI
+></OL
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><HR><H3
+CLASS="SECT2"
+><A
+NAME="DEV-DATABASES"
+>4.6. Databases</A
+></H3
+><DIV
+CLASS="SECT3"
+><H4
+CLASS="SECT3"
+><A
+NAME="AEN804"
+>4.6.1. Collation</A
+></H4
+><P
+>The Sinhala letters in the Unicode chart can be categorised as:</P
+><P
+></P
+><UL
+><LI
+><P
+>independent vowels: U+0D85 - U+0D96</P
+></LI
+><LI
+><P
+>consonants: U+0D9A - U+0DC6</P
+></LI
+><LI
+><P
+>dependent vowels: U+0DCA - U+0DF3</P
+></LI
+><LI
+><P
+>consonant modifiers: U+0D82 - U+0D83</P
+></LI
+></UL
+><P
+>The collation order of the groups can be broadly described as:</P
+><P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>independent vowels</P
+></LI
+><LI
+><P
+>consonant modifiers</P
+></LI
+><LI
+><P
+>consonants</P
+></LI
+><LI
+><P
+>dependent vowels.</P
+></LI
+></OL
+><P
+>The order of the groups and the order of the letters within the groups do <EM
+>not</EM
+> correspond to the collation order. Hence, tailoring is required.</P
+></DIV
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="AEN828"
+>4.6.2. Tailoring</A
+></H4
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://www.icu-project.org/userguide/Collate_Customization.html"
+TARGET="_top"
+>ICU User Guide: Collation Customization</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://unicode.org/collation/ducet-changes.html"
+TARGET="_top"
+>Change Management for the Unicode Collation Algorithm</A
+></P
+></LI
+></UL
+><DIV
+CLASS="SECT4"
+><HR><H5
+CLASS="SECT4"
+><A
+NAME="AEN837"
+>4.6.2.1. Sinhala tailoring rules</A
+></H5
+><P
+>The first tailoring rule is the minimal description of Sinhala tailoring. The second tailoring rule is the complete description of Sinhala tailoring as required by MySQL<A
+NAME="AEN840"
+HREF="#FTN.AEN840"
+><SPAN
+CLASS="footnote"
+>[18]</SPAN
+></A
+>.</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>/*
+  SCCII Part 1 : Collation Sequence (SLS1134)
+  2006/11/24
+  Harshula Jayasuriya &#60;harshula at gmail dot com&#62;
+  Language Technology Research Lab, University of Colombo / ICTA
+*/
+#if 1
+static const char sinhala[]=
+    "&#38; \\u0D96 &#60; \\u0D82 &#60; \\u0D83"
+    "&#38; \\u0DA5 &#60; \\u0DA4"
+    "&#38; \\u0DD8 &#60; \\u0DF2 &#60; \\u0DDF &#60; \\u0DF3"
+    "&#38; \\u0DDE &#60; \\u0DCA";
+#else
+static const char sinhala[]=
+    "&#38; \\u0D96 &#60; \\u0D82 &#60; \\u0D83 &#60; \\u0D9A &#60; \\u0D9B &#60; \\u0D9C &#60; \\u0D9D"
+              "&#60; \\u0D9E &#60; \\u0D9F &#60; \\u0DA0 &#60; \\u0DA1 &#60; \\u0DA2 &#60; \\u0DA3"
+              "&#60; \\u0DA5 &#60; \\u0DA4 &#60; \\u0DA6"
+              "&#60; \\u0DA7 &#60; \\u0DA8 &#60; \\u0DA9 &#60; \\u0DAA &#60; \\u0DAB &#60; \\u0DAC"
+              "&#60; \\u0DAD &#60; \\u0DAE &#60; \\u0DAF &#60; \\u0DB0 &#60; \\u0DB1"
+              "&#60; \\u0DB3 &#60; \\u0DB4 &#60; \\u0DB5 &#60; \\u0DB6 &#60; \\u0DB7 &#60; \\u0DB8"
+              "&#60; \\u0DB9 &#60; \\u0DBA &#60; \\u0DBB &#60; \\u0DBD &#60; \\u0DC0 &#60; \\u0DC1"
+              "&#60; \\u0DC2 &#60; \\u0DC3 &#60; \\u0DC4 &#60; \\u0DC5 &#60; \\u0DC6"
+              "&#60; \\u0DCF"
+              "&#60; \\u0DD0 &#60; \\u0DD1 &#60; \\u0DD2 &#60; \\u0DD3 &#60; \\u0DD4 &#60; \\u0DD6"
+              "&#60; \\u0DD8 &#60; \\u0DF2 &#60; \\u0DDF &#60; \\u0DF3 &#60; \\u0DD9 &#60; \\u0DDA"
+              "&#60; \\u0DDB &#60; \\u0DDC &#60; \\u0DDD &#60; \\u0DDE &#60; \\u0DCA";
+#endif</PRE
+></FONT
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="AEN844"
+>4.6.3. MySQL</A
+></H4
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://dev.mysql.com/tech-resources/articles/4.1/unicode.html"
+TARGET="_top"
+>Unicode and Other Funny Characters</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://dev.mysql.com/doc/refman/5.0/en/mysqld-option-tables.html"
+TARGET="_top"
+>MySQL 5.0 Reference Manual :: 5 Database Administration :: 5.2 mysqld ? The MySQL Server :: 5.2.1 Option and Variable Reference</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://dev.mysql.com/doc/refman/5.0/en/charset.html"
+TARGET="_top"
+>MySQL 5.0 Reference Manual :: 10 Character Set Support</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://dev.mysql.com/doc/internals/en/charsets.html"
+TARGET="_top"
+>MySQL Internals Manual :: 4 Important Algorithms and Structures :: 4.10 Character/Collation Sets</A
+></P
+></LI
+></UL
+><DIV
+CLASS="SECT4"
+><HR><H5
+CLASS="SECT4"
+><A
+NAME="AEN859"
+>4.6.3.1. Terminology</A
+></H5
+><P
+></P
+><UL
+><LI
+><P
+>ci = case insensitive</P
+></LI
+><LI
+><P
+>cs = case sensitive</P
+></LI
+><LI
+><P
+>bin = binary</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT4"
+><HR><H5
+CLASS="SECT4"
+><A
+NAME="AEN868"
+>4.6.3.2. Useful Commands</A
+></H5
+><P
+></P
+><UL
+><LI
+><P
+>SHOW CHARACTER SET;</P
+></LI
+><LI
+><P
+>SHOW COLLATION;</P
+></LI
+><LI
+><P
+>SHOW COLLATION like 'ucs%';</P
+></LI
+><LI
+><P
+>SHOW COLLATION like 'utf8%';</P
+></LI
+><LI
+><P
+>SET NAMES 'utf8'; // after connecting to server if the server has NOT set 'skip-character-set-client-handshake'</P
+></LI
+><LI
+><P
+>SHOW CREATE TABLE &#60;table-name&#62;;</P
+></LI
+><LI
+><P
+>SHOW VARIABLES;</P
+></LI
+><LI
+><P
+>\s</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT4"
+><HR><H5
+CLASS="SECT4"
+><A
+NAME="AEN887"
+>4.6.3.3. Configure MySQL Server</A
+></H5
+><P
+>Edit the file /etc/mysql/my.cnf and add to the [mysqld] section:</P
+><P
+></P
+><UL
+><LI
+><P
+>default-character_set=utf8</P
+></LI
+><LI
+><P
+>skip-character-set-client-handshake</P
+></LI
+></UL
+><P
+>This is done to ensure that UTF-8 is the default encoding for the server and client.</P
+></DIV
+><DIV
+CLASS="SECT4"
+><HR><H5
+CLASS="SECT4"
+><A
+NAME="AEN896"
+>4.6.3.4. Testing MySQL</A
+></H5
+><P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>Test Swedish (MySQL is a Swedish company) collation algorithm:</P
+><P
+><A
+HREF="http://en.wikipedia.org/wiki/Swedish_alphabet"
+TARGET="_top"
+>http://en.wikipedia.org/wiki/Swedish_alphabet</A
+></P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>CREATE TABLE t1 (
+        id SERIAL PRIMARY KEY,
+        letter VARCHAR(10) NOT NULL
+) CHARACTER SET utf8;</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>Running this collation handler:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>SELECT * FROM t1 ORDER BY letter COLLATE utf8_swedish_ci;</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>results in non-English letters appearing at the end of the sorted alphabet as expected.</P
+></LI
+><LI
+><P
+>Test new Sinhala collation algorithm:</P
+><P
+><A
+HREF="http://en.wikipedia.org/wiki/Sinhala_alphabet"
+TARGET="_top"
+>http://en.wikipedia.org/wiki/Sinhala_alphabet</A
+></P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>CREATE TABLE t2 (
+        id SERIAL PRIMARY KEY,
+        letter VARCHAR(10) NOT NULL
+) CHARACTER SET utf8;</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>Load the data from this file:</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://git.savannah.gnu.org/cgit/sinhala.git/tree/patches/mysql-data-sinhala.txt"
+TARGET="_top"
+>mysql-data-sinhala.txt</A
+></P
+></LI
+></UL
+><P
+>Running this collation handler:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>SELECT * FROM t2 ORDER BY letter COLLATE utf8_sinhala_ci;</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>results match the SCCII Part 1 : Collation Sequence (SLS1134).</P
+><P
+>Download the output file from:</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://git.savannah.gnu.org/cgit/sinhala.git/plain/patches/mysql-output-utf8_sinhala_ci.txt"
+TARGET="_top"
+>mysql-output-utf8_sinhala_ci.txt</A
+></P
+></LI
+></UL
+></LI
+></OL
+></DIV
+><DIV
+CLASS="SECT4"
+><HR><H5
+CLASS="SECT4"
+><A
+NAME="AEN925"
+>4.6.3.5. Source Code</A
+></H5
+><P
+></P
+><UL
+><LI
+><P
+>mysql/strings/ctype-uca.c</P
+></LI
+></UL
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>/*
+  Collation language is implemented according to
+  subset of ICU Collation Customization (tailorings):
+  http://www.icu-project.org/userguide/Collate_Customization.html
+  
+  Collation language elements:
+  Delimiters:
+    space   - skipped
+  
+  &#60;char&#62; :=  A-Z | a-z | \uXXXX
+  
+  Shift command:
+    &#60;shift&#62;  := &#38;       - reset at this letter. 
+  
+  Diff command:
+    &#60;d1&#62; :=  &#60;     - Identifies a primary difference.
+    &#60;d2&#62; :=  &#60;&#60;    - Identifies a secondary difference.
+    &#60;d3&#62; := &#60;&#60;&#60;    - Idenfifies a tertiary difference.
+  
+  
+  Collation rules:
+    &#60;ruleset&#62; :=  &#60;rule&#62;  { &#60;ruleset&#62; }
+    
+    &#60;rule&#62; :=   &#60;d1&#62;    &#60;string&#62;
+              | &#60;d2&#62;    &#60;string&#62;
+              | &#60;d3&#62;    &#60;string&#62;
+              | &#60;shift&#62; &#60;char&#62;
+    
+    &#60;string&#62; := &#60;char&#62; [ &#60;string&#62; ]
+  An example, Polish collation:
+  
+    &#38;A &#60; \u0105 &#60;&#60;&#60; \u0104
+    &#38;C &#60; \u0107 &#60;&#60;&#60; \u0106
+    &#38;E &#60; \u0119 &#60;&#60;&#60; \u0118
+    &#38;L &#60; \u0142 &#60;&#60;&#60; \u0141
+    &#38;N &#60; \u0144 &#60;&#60;&#60; \u0143
+    &#38;O &#60; \u00F3 &#60;&#60;&#60; \u00D3
+    &#38;S &#60; \u015B &#60;&#60;&#60; \u015A
+    &#38;Z &#60; \u017A &#60;&#60;&#60; \u017B    
+*/</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+></P
+><UL
+><LI
+><P
+>mysql/include/m_ctype.h</P
+></LI
+></UL
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>typedef struct charset_info_st
+{
+  uint      number;
+  uint      primary_number;
+  uint      binary_number;
+  uint      state;
+  const char *csname;
+  const char *name;
+  const char *comment;
+  const char *tailoring;
+  uchar    *ctype;
+  uchar    *to_lower;
+  uchar    *to_upper;
+  uchar    *sort_order;
+  uint16   *contractions;
+  uint16   **sort_order_big;
+  uint16      *tab_to_uni;
+  MY_UNI_IDX  *tab_from_uni;
+  MY_UNICASE_INFO **caseinfo;
+  uchar     *state_map;
+  uchar     *ident_map;
+  uint      strxfrm_multiply;
+  uchar     caseup_multiply;
+  uchar     casedn_multiply;
+  uint      mbminlen;
+  uint      mbmaxlen;
+  uint16    min_sort_char;
+  uint16    max_sort_char; /* For LIKE optimization */
+  uchar     pad_char;
+  my_bool   escape_with_backslash_is_dangerous;
+  
+  MY_CHARSET_HANDLER *cset;
+  MY_COLLATION_HANDLER *coll;
+  
+} CHARSET_INFO;</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+></P
+><UL
+><LI
+><P
+>mysys/charset.c: CHARSET_INFO *all_charsets[256]</P
+></LI
+><LI
+><P
+>mysys/charset.c</P
+><P
+>init_available_charsets()</P
+><P
+></P
+><UL
+><LI
+><P
+>mysys/charset-def.c</P
+><P
+>init_compiled_charsets()</P
+><P
+></P
+><UL
+><LI
+><P
+>mysys/charset.c</P
+><P
+>add_compiled_collation()</P
+></LI
+></UL
+></LI
+><LI
+><P
+>init_state_maps()</P
+></LI
+></UL
+></LI
+><LI
+><P
+>strings/ctype-uca.c</P
+><P
+>my_coll_init_uca()</P
+><P
+></P
+><UL
+><LI
+><P
+>create_tailoring()</P
+><P
+></P
+><UL
+><LI
+><P
+>my_coll_rule_parse()</P
+><P
+></P
+><UL
+><LI
+><P
+>my_coll_lexem_init()</P
+></LI
+></UL
+></LI
+></UL
+><P
+>[Copy the default weights data to the new weights data structure]</P
+></LI
+></UL
+></LI
+><LI
+><P
+>mysys/charset.c</P
+><P
+>get_charset_by_name()</P
+><P
+></P
+><UL
+><LI
+><P
+>get_collation_number()</P
+><P
+></P
+><UL
+><LI
+><P
+>get_collation_number_internal()</P
+></LI
+></UL
+></LI
+><LI
+><P
+>get_internal_charset()</P
+></LI
+></UL
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT4"
+><HR><H5
+CLASS="SECT4"
+><A
+NAME="AEN975"
+>4.6.3.6. Files requiring modification</A
+></H5
+><P
+></P
+><UL
+><LI
+><P
+>mysql/config/ac-macros/character_sets.m4</P
+></LI
+><LI
+><P
+>mysql/mysys/charset-def.c</P
+></LI
+><LI
+><P
+>mysql/strings/ctype-uca.c</P
+></LI
+><LI
+><P
+>mysql/configure (generated)</P
+></LI
+><LI
+><P
+>mysql/mysql-test/t/ctype_utf8.test</P
+></LI
+><LI
+><P
+>mysql/mysql-test/r/ctype_utf8.result</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT4"
+><HR><H5
+CLASS="SECT4"
+><A
+NAME="AEN990"
+>4.6.3.7. Patch</A
+></H5
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://git.savannah.gnu.org/cgit/sinhala.git/plain/patches/mysql-dfsg-5.0-5.0.27-sinhala1.patch"
+TARGET="_top"
+>mysql-dfsg-5.0-5.0.27-sinhala1.patch</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://git.savannah.gnu.org/cgit/sinhala.git/tree/patches/mysql-dfsg-5.0-5.0.32-sinhala2.patch"
+TARGET="_top"
+>mysql-dfsg-5.0-5.0.32-sinhala2.patch</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://dev.mysql.com/downloads/mysql/5.5.html"
+TARGET="_top"
+>Patches are included in MySQL 5.5</A
+></P
+></LI
+></UL
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><HR><H3
+CLASS="SECT2"
+><A
+NAME="DEV-LOCALES"
+>4.7. Locales</A
+></H3
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://www.opengroup.org/onlinepubs/009695399/basedefs/xbd_chap07.html"
+TARGET="_top"
+>The Open Group Base Specifications Issue 6</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.open-std.org/jtc1/sc22/wg20/docs/n972-14652ft.pdf"
+TARGET="_top"
+>http://www.open-std.org/jtc1/sc22/wg20/docs/n972-14652ft.pdf</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.unicode.org/reports/tr35/"
+TARGET="_top"
+>UTS #35: Unicode Locale Data Markup Language (LDML)</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.unicode.org/cldr/"
+TARGET="_top"
+>Common Locale Data Repository</A
+></P
+></LI
+></UL
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="AEN1017"
+>4.7.1. Collation</A
+></H4
+><P
+>To define a collation order for a script, edit:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>/usr/share/i18n/locales/iso14651_t1_common</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>To test the changes, run:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>LC_ALL=&#60;LOCALE&#62; sort</PRE
+></FONT
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><HR><H3
+CLASS="SECT2"
+><A
+NAME="DEV-TRANSLATIONS"
+>4.8. Translations</A
+></H3
+><DIV
+CLASS="SECT3"
+><H4
+CLASS="SECT3"
+><A
+NAME="AEN1025"
+>4.8.1. GNOME</A
+></H4
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://developer.gnome.org/projects/gtp/l10n-guide/"
+TARGET="_top"
+>http://developer.gnome.org/projects/gtp/l10n-guide/</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://developer.gnome.org/doc/tutorials/gnome-i18n/translator.html"
+TARGET="_top"
+>http://developer.gnome.org/doc/tutorials/gnome-i18n/translator.html</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://developer.gnome.org/projects/gtp/teams.html"
+TARGET="_top"
+>http://developer.gnome.org/projects/gtp/teams.html</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://l10n.gnome.org/languages/si/"
+TARGET="_top"
+>http://l10n.gnome.org/languages/si/</A
+></P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="AEN1040"
+>4.8.2. KDE</A
+></H4
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://i18n.kde.org/"
+TARGET="_top"
+>KDE Localization</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://l10n.kde.org/team-infos.php?teamcode=si"
+TARGET="_top"
+>http://l10n.kde.org/team-infos.php?teamcode=si</A
+></P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="AEN1049"
+>4.8.3. Debian</A
+></H4
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://www.debian.org/international/l10n/po/si"
+TARGET="_top"
+>http://www.debian.org/international/l10n/po/si</A
+></P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="AEN1055"
+>4.8.4. Fedora</A
+></H4
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://fedoraproject.org/wiki/L10N/Teams/Sinhala"
+TARGET="_top"
+>http://fedoraproject.org/wiki/L10N/Teams/Sinhala</A
+></P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="AEN1061"
+>4.8.5. Ubuntu</A
+></H4
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="https://translations.launchpad.net/ubuntu/jaunty/+lang/si"
+TARGET="_top"
+>https://translations.launchpad.net/ubuntu/jaunty/+lang/si</A
+></P
+></LI
+></UL
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><HR><H3
+CLASS="SECT2"
+><A
+NAME="DEV-PACKAGING"
+>4.9. Packaging</A
+></H3
+><DIV
+CLASS="SECT3"
+><H4
+CLASS="SECT3"
+><A
+NAME="AEN1069"
+>4.9.1. Debian</A
+></H4
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://www.debian.org/devel/"
+TARGET="_top"
+>Debian Developers' Corner</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.debian.org/doc/maint-guide/"
+TARGET="_top"
+>Debian New Maintainers' Guide</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.debian.org/doc/developers-reference/"
+TARGET="_top"
+>Debian Developer's Reference</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.debian.org/doc/debian-policy/"
+TARGET="_top"
+>Debian Policy Manual</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.debian.org/doc/FAQ/index.en.html"
+TARGET="_top"
+>The Debian GNU/Linux FAQ</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.netfort.gr.jp/~dancer/column/libpkg-guide/libpkg-guide.html"
+TARGET="_top"
+>Debian Library Packaging guide</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.debian.org/devel/wnpp/"
+TARGET="_top"
+>Work-Needing and Prospective Packages</A
+></P
+></LI
+><LI
+><P
+>To understand issues involving <EM
+>config.guess</EM
+> and <EM
+>config.sub</EM
+>, refer to /usr/share/doc/autotools-dev/README.Debian.gz .</P
+></LI
+><LI
+><P
+>In <EM
+>debian/rules</EM
+>, for the target <EM
+>binary-arch</EM
+>, you'll probably have to uncomment <EM
+>dh_install</EM
+>. Or you can just change the <EM
+>DESTDIR</EM
+> of:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>$(MAKE) DESTDIR=$(CURDIR)/debian/tmp install</PRE
+></FONT
+></TD
+></TR
+></TABLE
+></LI
+><LI
+><P
+><A
+HREF="http://www.netfort.gr.jp/~dancer/software/pbuilder-doc/pbuilder-doc.html"
+TARGET="_top"
+>pbuilder</A
+></P
+></LI
+><LI
+><P
+>To extract the content of a .deb file:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>ar -x &#60;name&#62;.deb</PRE
+></FONT
+></TD
+></TR
+></TABLE
+></LI
+><LI
+><P
+>To create a Debianized source tree from a Debian source package:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>dpkg-source -x &#60;name&#62;.dsc</PRE
+></FONT
+></TD
+></TR
+></TABLE
+></LI
+><LI
+><P
+>To generate a .deb from within a Debianized source tree:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>dpkg-buildpackage -b -uc -us</PRE
+></FONT
+></TD
+></TR
+></TABLE
+></LI
+><LI
+><P
+>To generate the .dsc and the .diff.gz run:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>dpkg-source -b &#60;dir&#62;</PRE
+></FONT
+></TD
+></TR
+></TABLE
+><P
+>on the untarred Debianized source tree. Remember to leave the renamed original source tarball of the package in the parent directory.</P
+></LI
+><LI
+><P
+>Don't forget to sign the source package:</P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="SCREEN"
+>debsign -m&#60;maintainer&#62; &#60;name&#62;.dsc</PRE
+></FONT
+></TD
+></TR
+></TABLE
+></LI
+><LI
+><P
+>irc.oftc.net, channel #debian-mentors</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT3"
+><HR><H4
+CLASS="SECT3"
+><A
+NAME="AEN1125"
+>4.9.2. Ubuntu</A
+></H4
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="https://wiki.ubuntu.com/PackagingGuide"
+TARGET="_top"
+>Packaging Guide</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="https://wiki.ubuntu.com/MOTU/Packages/New"
+TARGET="_top"
+>MOTU/Packages/New</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="https://wiki.ubuntu.com/PbuilderHowto"
+TARGET="_top"
+>pbuilder HOWTO</A
+></P
+></LI
+></UL
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><HR><H3
+CLASS="SECT2"
+><A
+NAME="DEV-DONE"
+>4.10. DONE</A
+></H3
+><P
+></P
+><UL
+><LI
+><P
+>Renderer (Layout Engine)</P
+><P
+></P
+><UL
+><LI
+><P
+>Pango</P
+><P
+></P
+><UL
+><LI
+><P
+>Created and submitted Pango patch - don't implicitly create conjuncts</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://bugzilla.gnome.org/show_bug.cgi?id=161981"
+TARGET="_top"
+>http://bugzilla.gnome.org/show_bug.cgi?id=161981</A
+></P
+></LI
+></UL
+></LI
+><LI
+><P
+>Inform bengalinux-core team the implications of the fix to Pango Bug 145233 â€“ Zero-width non-joiner is displayed (<A
+HREF="http://bugzilla.gnome.org/show_bug.cgi?id=145233"
+TARGET="_top"
+>http://bugzilla.gnome.org/show_bug.cgi?id=145233</A
+>)</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://www.mail-archive.com/bengalinux-core@lists.sourceforge.net/msg00502.html"
+TARGET="_top"
+>http://www.mail-archive.com/bengalinux-core@lists.sourceforge.net/msg00502.html</A
+></P
+></LI
+></UL
+></LI
+><LI
+><P
+>Created and submitted Pango patch - Enable touching letters in Sinhala rendering</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://bugzilla.gnome.org/show_bug.cgi?id=302577"
+TARGET="_top"
+>http://bugzilla.gnome.org/show_bug.cgi?id=302577</A
+></P
+></LI
+></UL
+></LI
+><LI
+><P
+>Created and submitted Pango patch - Worst case expansion for Sinhala</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://bugzilla.gnome.org/show_bug.cgi?id=385321"
+TARGET="_top"
+>http://bugzilla.gnome.org/show_bug.cgi?id=385321</A
+></P
+></LI
+></UL
+></LI
+><LI
+><P
+>Created and submitted Pango patch - Cursor positioning for Sinhala is broken</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://bugzilla.gnome.org/show_bug.cgi?id=451682"
+TARGET="_top"
+>http://bugzilla.gnome.org/show_bug.cgi?id=451682</A
+></P
+></LI
+></UL
+></LI
+><LI
+><P
+>Created and submitted Pango patch - Remove SF_MPRE_FIXUP from Sinhala script flags</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://bugzilla.gnome.org/show_bug.cgi?id=536017"
+TARGET="_top"
+>http://bugzilla.gnome.org/show_bug.cgi?id=536017</A
+></P
+></LI
+></UL
+></LI
+></UL
+></LI
+><LI
+><P
+>ICU</P
+><P
+></P
+><UL
+><LI
+><P
+>Provided test files and images for ICU Sinhala support</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://bugs.icu-project.org/trac/ticket/4298"
+TARGET="_top"
+>http://bugs.icu-project.org/trac/ticket/4298</A
+></P
+></LI
+></UL
+></LI
+><LI
+><P
+>Convinced Pango and ICU maintainers to emit ZWJ to the font lookup stage</P
+><P
+></P
+><UL
+><LI
+><P
+>ICU: ZWJ Processing in Sinhala / Implement PR 37 ZWJ/ZWNJ Behavior</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://bugs.icu-project.org/trac/ticket/4710"
+TARGET="_top"
+>http://bugs.icu-project.org/trac/ticket/4710</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://bugs.icu-project.org/trac/ticket/4711"
+TARGET="_top"
+>http://bugs.icu-project.org/trac/ticket/4711</A
+></P
+></LI
+></UL
+></LI
+></UL
+></LI
+><LI
+><P
+>Created and submitted ICU patch - Indic Reordering State Table Allows ZWJ Virama ZWJ</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://bugs.icu-project.org/trac/ticket/5057"
+TARGET="_top"
+>http://bugs.icu-project.org/trac/ticket/5057</A
+></P
+></LI
+></UL
+></LI
+><LI
+><P
+>Ported Pango patches, which add Sinhala support, to ICU for immediate use in ICU 3.4</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://www.redhat.com/archives/fedora-cvs-commits/2006-May/msg00126.html"
+TARGET="_top"
+>http://www.redhat.com/archives/fedora-cvs-commits/2006-May/msg00126.html</A
+></P
+></LI
+></UL
+></LI
+><LI
+><P
+>Created and submitted ICU patch - SF_MPRE_FIXUP causing conjuncts to be split in Sinhala</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://bugs.icu-project.org/trac/ticket/6232"
+TARGET="_top"
+>http://bugs.icu-project.org/trac/ticket/6232</A
+></P
+></LI
+></UL
+></LI
+></UL
+></LI
+><LI
+><P
+>Open Office</P
+><P
+></P
+><UL
+><LI
+><P
+>Discovered Open Office was filtering ZWJ</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://mail.lug.lk/lurker/message/20060410.130454.19cefb01.en.html"
+TARGET="_top"
+>http://mail.lug.lk/lurker/message/20060410.130454.19cefb01.en.html</A
+></P
+></LI
+></UL
+></LI
+><LI
+><P
+>Convinced Open Office developers to stop filtering ZWJ and ZWNJ - ZWJ: The zero width joiner shouldn't be filtered out</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://qa.openoffice.org/issues/show_bug.cgi?id=68047"
+TARGET="_top"
+>http://qa.openoffice.org/issues/show_bug.cgi?id=68047</A
+></P
+></LI
+></UL
+></LI
+><LI
+><P
+>Reported that Open Office was filtering ZWJ and ZWNJ to Ubuntu - Incorrect Bengali rendering of ra+japhala</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="https://launchpad.net/distros/debian/+source/icu/+bug/35085"
+TARGET="_top"
+>https://launchpad.net/distros/debian/+source/icu/+bug/35085</A
+></P
+></LI
+></UL
+></LI
+><LI
+><P
+>Reported Open Office bug to Debian - The zero width joiner shouldn't be filtered out </P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=403275"
+TARGET="_top"
+>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=403275</A
+></P
+></LI
+></UL
+></LI
+></UL
+></LI
+><LI
+><P
+>Created and submitted Epiphany patch - Add si (Sinhala) to the list of locales requiring Pango</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://bugzilla.gnome.org/show_bug.cgi?id=361538"
+TARGET="_top"
+>http://bugzilla.gnome.org/show_bug.cgi?id=361538</A
+></P
+></LI
+></UL
+></LI
+><LI
+><P
+>Created and submitted Ubuntu Firefox patch - Add si (Sinhala) to the list of locales requiring Pango</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="https://launchpad.net/distros/ubuntu/+source/firefox/+bug/66270/"
+TARGET="_top"
+>https://launchpad.net/distros/ubuntu/+source/firefox/+bug/66270/</A
+></P
+></LI
+></UL
+></LI
+></UL
+></LI
+><LI
+><P
+>Input Methods</P
+><P
+></P
+><UL
+><LI
+><P
+>Created and submitted XKB keyboard layout to X Keyboard Configuration Database</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://listserv.bat.ru/xkb/Message/320.html"
+TARGET="_top"
+>http://listserv.bat.ru/xkb/Message/320.html</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://bugs.freedesktop.org/show_bug.cgi?id=11284"
+TARGET="_top"
+>http://bugs.freedesktop.org/show_bug.cgi?id=11284</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="https://bugs.freedesktop.org/show_bug.cgi?id=37613"
+TARGET="_top"
+>https://bugs.freedesktop.org/show_bug.cgi?id=37613</A
+></P
+></LI
+></UL
+></LI
+><LI
+><P
+>Created and submitted vim keyboard layout to Bram</P
+></LI
+><LI
+><P
+>Created and submitted XKB keyboard layout to xorg</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="https://bugs.freedesktop.org/show_bug.cgi?id=1850"
+TARGET="_top"
+>https://bugs.freedesktop.org/show_bug.cgi?id=1850</A
+></P
+></LI
+></UL
+></LI
+><LI
+><P
+>Created and submitted XKB keyboard layout to xfree86</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://bugs.xfree86.org/show_bug.cgi?id=1509"
+TARGET="_top"
+>http://bugs.xfree86.org/show_bug.cgi?id=1509</A
+></P
+></LI
+></UL
+></LI
+><LI
+><P
+>Tested and provided feedback on the m17n Wijesekera input method</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://www.linux.lk/lurker/message/20060926.124636.9781ef2e.en.html"
+TARGET="_top"
+>http://www.linux.lk/lurker/message/20060926.124636.9781ef2e.en.html</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://sourceforge.net/mailarchive/message.php?msg_id=919362"
+TARGET="_top"
+>http://sourceforge.net/mailarchive/message.php?msg_id=919362</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://sourceforge.net/mailarchive/message.php?msg_id=919452"
+TARGET="_top"
+>http://sourceforge.net/mailarchive/message.php?msg_id=919452</A
+></P
+></LI
+></UL
+></LI
+><LI
+><P
+>Updated XKB keyboard layout</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="https://bugs.freedesktop.org/show_bug.cgi?id=11284"
+TARGET="_top"
+>https://bugs.freedesktop.org/show_bug.cgi?id=11284</A
+></P
+></LI
+></UL
+></LI
+><LI
+><P
+>Developed Sinhala Phonetic keyboard layouts and a Transliteration scheme</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://www.nongnu.org/sinhala/doc/keymaps/sinhala-keyboard_3.html"
+TARGET="_top"
+>http://www.nongnu.org/sinhala/doc/keymaps/sinhala-keyboard_3.html</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.nongnu.org/sinhala/doc/keymaps/sinhala-keyboard_4.html"
+TARGET="_top"
+>http://www.nongnu.org/sinhala/doc/keymaps/sinhala-keyboard_4.html</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.nongnu.org/sinhala/doc/transliteration/sinhala-transliteration_5.html"
+TARGET="_top"
+>http://www.nongnu.org/sinhala/doc/transliteration/sinhala-transliteration_5.html</A
+></P
+></LI
+></UL
+></LI
+><LI
+><P
+>Implemented phonetic and transliteration input methods for m17n</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://cvs.m17n.org/viewcvs/m17n/m17n-contrib/im/si-phonetic-dynamic.mim?view=log"
+TARGET="_top"
+>http://cvs.m17n.org/viewcvs/m17n/m17n-contrib/im/si-phonetic-dynamic.mim?view=log</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://cvs.m17n.org/viewcvs/m17n/m17n-contrib/im/si-phonetic-static.mim?view=log"
+TARGET="_top"
+>http://cvs.m17n.org/viewcvs/m17n/m17n-contrib/im/si-phonetic-static.mim?view=log</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://cvs.m17n.org/viewcvs/m17n/m17n-contrib/im/si-trans.mim?view=log"
+TARGET="_top"
+>http://cvs.m17n.org/viewcvs/m17n/m17n-contrib/im/si-trans.mim?view=log</A
+></P
+></LI
+></UL
+></LI
+><LI
+><P
+>Ensured surrounding text support was added to IBus</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="https://bugzilla.redhat.com/show_bug.cgi?id=435880"
+TARGET="_top"
+>https://bugzilla.redhat.com/show_bug.cgi?id=435880</A
+></P
+></LI
+></UL
+></LI
+><LI
+><P
+>Add Sinhala to /usr/include/X11/keysymdef.h</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://cgit.freedesktop.org/xorg/proto/x11proto/commit/?id=423f5faddbb1023d0c1cf55b9d1da4397aa1aa26"
+TARGET="_top"
+>http://cgit.freedesktop.org/xorg/proto/x11proto/commit/?id=423f5faddbb1023d0c1cf55b9d1da4397aa1aa26</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://cgit.freedesktop.org/xorg/lib/libX11/commit/?id=25eb76b3d2726f2f1de759901971ae53b2539dc4"
+TARGET="_top"
+>http://cgit.freedesktop.org/xorg/lib/libX11/commit/?id=25eb76b3d2726f2f1de759901971ae53b2539dc4</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="https://bugs.freedesktop.org/show_bug.cgi?id=35530"
+TARGET="_top"
+>https://bugs.freedesktop.org/show_bug.cgi?id=35530</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="https://bugs.freedesktop.org/show_bug.cgi?id=35533"
+TARGET="_top"
+>https://bugs.freedesktop.org/show_bug.cgi?id=35533</A
+></P
+></LI
+></UL
+></LI
+></UL
+></LI
+><LI
+><P
+>Fonts</P
+><P
+></P
+><UL
+><LI
+><P
+>Discovered that the printing problem was due to the font being an OTF font. Once the LKLUG font was changed to a TTF, the printing problem disappeared.</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://www.lug.lk/lurker/message/20050810.094347.8539b8d4.en.html"
+TARGET="_top"
+>http://www.lug.lk/lurker/message/20050810.094347.8539b8d4.en.html</A
+></P
+></LI
+></UL
+></LI
+><LI
+><P
+>Added a glyph for &#8220;Kunddaliya&#8221; to LKLUG font</P
+></LI
+><LI
+><P
+>Reorganised glyphs containing &#8220;Repaya&#8221; and added corresponding lookups to LKLUG font</P
+></LI
+><LI
+><P
+>Created and submitted fontconfig patch - fontconfig: fix Sinhala coverage</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://bugs.freedesktop.org/show_bug.cgi?id=19288"
+TARGET="_top"
+>http://bugs.freedesktop.org/show_bug.cgi?id=19288</A
+></P
+></LI
+></UL
+></LI
+><LI
+><P
+>Request to remove incomplete Sinhala glyphs</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://lists.gnu.org/archive/html/freefont-bugs/2009-02/msg00000.html"
+TARGET="_top"
+>http://lists.gnu.org/archive/html/freefont-bugs/2009-02/msg00000.html</A
+></P
+></LI
+></UL
+></LI
+><LI
+><P
+>Improved the range and correctness of the Unicode Sinhala section in the FreeFont</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="https://savannah.gnu.org/forum/forum.php?forum_id=6518"
+TARGET="_top"
+>https://savannah.gnu.org/forum/forum.php?forum_id=6518</A
+></P
+></LI
+></UL
+></LI
+></UL
+></LI
+><LI
+><P
+>Standards</P
+><P
+></P
+><UL
+><LI
+><P
+>Amended ISO639 to include 'Sinhala' in the languages list alongside 'Sinhalese'</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://www.loc.gov/standards/iso639-2/php/code_list.php"
+TARGET="_top"
+>http://www.loc.gov/standards/iso639-2/php/code_list.php</A
+></P
+></LI
+></UL
+></LI
+><LI
+><P
+>Reported errors in the SCCII - Part 1: Collation Sequence (SLS1134)</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://sourceforge.net/mailarchive/message.php?msg_id=919347"
+TARGET="_top"
+>http://sourceforge.net/mailarchive/message.php?msg_id=919347</A
+></P
+></LI
+></UL
+></LI
+></UL
+></LI
+><LI
+><P
+>Collation</P
+><P
+></P
+><UL
+><LI
+><P
+>Created and submitted MySQL patch - Add Sinhala script (Sri Lanka) collation to MySQL</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://bugs.mysql.com/bug.php?id=26474"
+TARGET="_top"
+>http://bugs.mysql.com/bug.php?id=26474</A
+></P
+></LI
+></UL
+></LI
+><LI
+><P
+>Created and submitted glibc patch - Sinhala (si) collation order undefined</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://sourceware.org/bugzilla/show_bug.cgi?id=6968"
+TARGET="_top"
+>http://sourceware.org/bugzilla/show_bug.cgi?id=6968</A
+></P
+></LI
+></UL
+></LI
+></UL
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT2"
+><HR><H3
+CLASS="SECT2"
+><A
+NAME="DEV-TODO"
+>4.11. TODO</A
+></H3
+><P
+></P
+><UL
+><LI
+><P
+>Software should use the word &#8220;Sinhala&#8221;, not &#8220;Sinhalese&#8221;</P
+><P
+>Software should use the word "Sinhala" to refer to the language. Unfortunately, some software projects use &#8220;Sinhalese", &#8220;Singhalese" or some other variant.</P
+><P
+>If you come across FOSS or non-FOSS software that do not use the word "Sinhala" to refer to the language, can you please file a <EM
+>bug</EM
+> with the software or send an email to the software maintainer(s)?</P
+><P
+>ISO 639 is the reference used by most software projects. &#8220;Sinhala" is the preferred word for the language as per ISO 639 and the Sri Lankan constitution:</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://www.loc.gov/standards/iso639-2/php/code_list.php"
+TARGET="_top"
+>http://www.loc.gov/standards/iso639-2/php/code_list.php</A
+></P
+><A
+NAME="AEN1427"
+></A
+><BLOCKQUOTE
+CLASS="BLOCKQUOTE"
+><P
+>sin si Sinhala; Sinhalese</P
+></BLOCKQUOTE
+></LI
+><LI
+><P
+><A
+HREF="http://www.constitution.gov.lk/downloads/Chapter%20IV%20-%20Language.pdf"
+TARGET="_top"
+>http://www.constitution.gov.lk/downloads/Chapter%20IV%20-%20Language.pdf</A
+></P
+><A
+NAME="AEN1432"
+></A
+><BLOCKQUOTE
+CLASS="BLOCKQUOTE"
+><P
+>18. 3[(1)] The Official Language of Sri Lanka shall be Sinhala. </P
+></BLOCKQUOTE
+></LI
+></UL
+><P
+>&#8220;Sinhala&#8221; is the preferred word for the script as per ISO 15924:</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://www.unicode.org/iso15924/iso15924-codes.html"
+TARGET="_top"
+>http://www.unicode.org/iso15924/iso15924-codes.html</A
+></P
+><A
+NAME="AEN1439"
+></A
+><BLOCKQUOTE
+CLASS="BLOCKQUOTE"
+><P
+>Sinh 348 Sinhala singhalais Sinhala 2004-05-01</P
+></BLOCKQUOTE
+></LI
+></UL
+><P
+>Furthermore, if it is FOSS project, you can refer to the GNOME and KDE projects as an example where the word "Sinhala" is used: </P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://l10n.gnome.org/languages/si/"
+TARGET="_top"
+>http://l10n.gnome.org/languages/si/</A
+></P
+><A
+NAME="AEN1446"
+></A
+><BLOCKQUOTE
+CLASS="BLOCKQUOTE"
+><P
+>Sinhala Translation Team</P
+></BLOCKQUOTE
+></LI
+><LI
+><P
+><A
+HREF="http://l10n.kde.org/team-infos.php?teamcode=si"
+TARGET="_top"
+>http://l10n.kde.org/team-infos.php?teamcode=si</A
+></P
+><A
+NAME="AEN1451"
+></A
+><BLOCKQUOTE
+CLASS="BLOCKQUOTE"
+><P
+>Sinhala Team (si)</P
+></BLOCKQUOTE
+></LI
+></UL
+><P
+>This is an easy way to help out, so if get a chance please do your little bit, good luck!</P
+></LI
+><LI
+><P
+>Renderer (Layout Engine)</P
+><P
+></P
+><UL
+><LI
+><P
+>ccmp feature for Indic Languages...</P
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://bugs.icu-project.org/trac/ticket/7601"
+TARGET="_top"
+>http://bugs.icu-project.org/trac/ticket/7601</A
+></P
+></LI
+></UL
+></LI
+><LI
+><P
+>Support touching letters in QT Renderer</P
+></LI
+></UL
+></LI
+><LI
+><P
+>Input Methods</P
+><P
+></P
+><UL
+><LI
+><P
+>See if XKB can be extended to allow multiple codepoints per keycode</P
+></LI
+></UL
+></LI
+><LI
+><P
+>Fonts</P
+><P
+></P
+><UL
+><LI
+><P
+>Learn about OT features/order</P
+></LI
+><LI
+><P
+>Develop a standard lookup table for font developers</P
+></LI
+></UL
+></LI
+><LI
+><P
+>Sorting</P
+><P
+></P
+><UL
+><LI
+><P
+>String matching - a consonant followed by dependent vowel 'o' should not match the same consonant followed by dependent vowel 'oo'</P
+></LI
+><LI
+><P
+>Can the DUCET be updated with the correct Sinhala collation sequence?</P
+></LI
+><LI
+><P
+>MySQL Sinhala locale needed</P
+></LI
+></UL
+></LI
+><LI
+><P
+>Other GNU/Linux Infrastructure</P
+><P
+></P
+><UL
+><LI
+><P
+>OTF printing problem</P
+></LI
+></UL
+></LI
+><LI
+><P
+>Printing</P
+><P
+></P
+><UL
+><LI
+><P
+>Firefox &#38; Thunderbird can't print Sinhala</P
+></LI
+></UL
+></LI
+><LI
+><P
+>Misc</P
+><P
+></P
+><UL
+><LI
+><P
+>Submit corrections to Unicode. e.g. aae Vs aee</P
+></LI
+><LI
+><P
+>UTF-8 should be declared the standard file encoding</P
+></LI
+><LI
+><P
+>Develop Sinhala IPA transliteration for documents</P
+></LI
+><LI
+><P
+>Develop Sinhala literary transliteration for documents</P
+></LI
+><LI
+><P
+>English Locale for Sri Lanka</P
+></LI
+></UL
+></LI
+></UL
+></DIV
+></DIV
+><DIV
+CLASS="SECT1"
+><HR><H2
+CLASS="SECT1"
+><A
+NAME="RESOURCES"
+>5. Resources</A
+></H2
+><DIV
+CLASS="SECT2"
+><H3
+CLASS="SECT2"
+><A
+NAME="RES-INPUT-METHODS"
+>5.1. Input Methods</A
+></H3
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://gtk-im-extra.sourceforge.net/"
+TARGET="_top"
+>gtk-im-extra</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://gswitchit.sourceforge.net/"
+TARGET="_top"
+>GSwitchIt</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.openi18n.org/modules.php?op=modload&#38;name=Sections&#38;file=index&#38;req=viewarticle&#38;artid=30&#38;page=1"
+TARGET="_top"
+>OpenI18N.org: IIIMF project</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.scim-im.org/"
+TARGET="_top"
+>Smart Common Input Method Platform</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://freedesktop.org/wiki/Software/XKeyboardConfig"
+TARGET="_top"
+>X Keyboard Configuration Database</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://pascal.tsu.ru/en/xkb/"
+TARGET="_top"
+>X Keyboard Extension</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.charvolant.org/~doug/xkb/html/index.html"
+TARGET="_top"
+>An Unreliable Guide to XKB Configuration</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://xfree86.org/4.4.0/XKB-Config.html"
+TARGET="_top"
+>The XKB Configuration Guide</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://xfree86.org/4.4.0/XKB-Enhancing.html"
+TARGET="_top"
+>How to further enhance XKB configuration</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.linux.com/article.pl?sid=04/06/03/1558258"
+TARGET="_top"
+>Creating custom keyboard layouts for X11 using XKB</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.tldp.org/HOWTO/Intkeyb/"
+TARGET="_top"
+>How to setup international keyboard in X Window with Xmodmap and XKB</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.in-ulm.de/~mascheck/X11/xmodmap.html"
+TARGET="_top"
+>Some hints about xmodmap(1) and the X11 keyboard model</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://web.mit.edu/answers/xwindows/xwindows_xmodmap.html"
+TARGET="_top"
+>Using XMODMAP to modify key and mouse actions</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.jwz.org/xkeycaps/"
+TARGET="_top"
+>XKeyCaps</A
+></P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT2"
+><HR><H3
+CLASS="SECT2"
+><A
+NAME="RES-INTERNATIONALIZATION"
+>5.2. Internationalization</A
+></H3
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://www.i18nguy.com/"
+TARGET="_top"
+>Internationalization (I18n), Localization (L10n), Standards, and Amusements</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.openi18n.org/"
+TARGET="_top"
+>OpenI18N.org: The Free standards Group Open Internationalization Initiative</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.pango.org/"
+TARGET="_top"
+>Pango</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.icu-project.org/"
+TARGET="_top"
+>International Components for Unicode</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://gtranslator.sourceforge.net/"
+TARGET="_top"
+>Gtranslator</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.m17n.org/"
+TARGET="_top"
+>m17n</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://gucharmap.sourceforge.net/"
+TARGET="_top"
+>gucharmap</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.yudit.org/"
+TARGET="_top"
+>Yudit</A
+></P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT2"
+><HR><H3
+CLASS="SECT2"
+><A
+NAME="RES-LOCALIZATION"
+>5.3. Localization</A
+></H3
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://www.panl10n.net/english/outputs/GLOSS.pdf"
+TARGET="_top"
+>PAN - Guide to Localization of Open Source Software</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.bengalinux.org/"
+TARGET="_top"
+>Ankur - Supporting Bangla (Bengali) on GNU/Linux</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.indlinux.org/"
+TARGET="_top"
+>indLinuX</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://linux.thai.net/~thep/"
+TARGET="_top"
+>Thai Language Supports</A
+></P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT2"
+><HR><H3
+CLASS="SECT2"
+><A
+NAME="RES-SINHALA"
+>5.4. Sinhala</A
+></H3
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://www.nongnu.org/sinhala/"
+TARGET="_top"
+>Sinhala HOWTO, Keyboard Layouts and Transliteration Schemes</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://sinhala.sourceforge.net"
+TARGET="_top"
+>http://sinhala.sourceforge.net</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://subasa.lk/"
+TARGET="_top"
+>Subasa</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.ucsc.cmb.ac.lk/ltrl/"
+TARGET="_top"
+>UCSC: Language Technology Research Lab</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://locallanguages.lk/"
+TARGET="_top"
+>http://locallanguages.lk/</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.ctan.org/tex-archive/language/sinhala/"
+TARGET="_top"
+>sinhala_tex</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.xenotypetech.com/osxSinhala.html"
+TARGET="_top"
+>Sinhala Language Kit for Mac OS X</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.microimage.com/helawadana/"
+TARGET="_top"
+>Microimage: Helawadana</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://cg.scs.carleton.ca/~luc/sinhala.html"
+TARGET="_top"
+>Sinhala fonts</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.evertype.com/standards/si/si.html"
+TARGET="_top"
+>Proposal for encoding the Sinhala script in ISO/IEC 10646</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.evertype.com/standards/si/iso10646-to-sls1134.html"
+TARGET="_top"
+>Mapping of Sinhala between ISO/IEC 10646 and SLS 1134</A
+></P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT2"
+><HR><H3
+CLASS="SECT2"
+><A
+NAME="RES-TYPOGRAPHY"
+>5.5. Typography</A
+></H3
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://www.truetype-typography.com/"
+TARGET="_top"
+>TrueType Typography: Info about TTF Fonts and Technology</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.microsoft.com/typography/default.mspx"
+TARGET="_top"
+>Microsoft Typography</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.adobe.com/type/opentype/index.html"
+TARGET="_top"
+>Introduction to OpenType</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://scripts.sil.org/"
+TARGET="_top"
+>scripts.sil.org: Computers and Writing Systems</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://home.kabelfoon.nl/~slam/fonts/"
+TARGET="_top"
+>TrueType/OpenType Tools</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://fontforge.sourceforge.net/"
+TARGET="_top"
+>FontForge</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://sayamindu.randomink.org/conv_guide/"
+TARGET="_top"
+> Converting a legacy ASCII based Indic font to an Unicode compliant Open Type Font</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://sourceforge.net/projects/fonttools/"
+TARGET="_top"
+>TTX/FontTools</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.xfree86.org/current/fonts.html"
+TARGET="_top"
+>Xfree86.org: fonts</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.freetype.org/freetype2/documentation.html"
+TARGET="_top"
+>FreeType2 Font Engine Documentation</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.nongnu.org/freefont/"
+TARGET="_top"
+>Free UCS Outline Fonts</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://tech.groups.yahoo.com/group/gnu-unifont/"
+TARGET="_top"
+>The GNU Unicode Font Project</A
+></P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT2"
+><HR><H3
+CLASS="SECT2"
+><A
+NAME="RES-UNICODE"
+>5.6. Unicode</A
+></H3
+><P
+></P
+><UL
+><LI
+><P
+><A
+HREF="http://www.linguistics.berkeley.edu/~dwanders/"
+TARGET="_top"
+>Script Encoding Initiative</A
+></P
+></LI
+><LI
+><P
+><A
+HREF="http://www.mail-archive.com/unicode@unicode.org/"
+TARGET="_top"
+>unicode@unicode.org mail archive</A
+></P
+></LI
+></UL
+></DIV
+></DIV
+><DIV
+CLASS="SECT1"
+><HR><H2
+CLASS="SECT1"
+><A
+NAME="CONCLUSION"
+>6. Conclusion</A
+></H2
+><P
+>We have made significant progress in adding Sinhala support to GNU/Linux, however, there are still areas that require attention. The level of Sinhala support in GNU/Linux is more than adequate for deployment in Sri Lanka.</P
+></DIV
+></DIV
+><H3
+CLASS="FOOTNOTES"
+>Notes</H3
+><TABLE
+BORDER="0"
+CLASS="FOOTNOTES"
+WIDTH="100%"
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN474"
+HREF="#AEN474"
+><SPAN
+CLASS="footnote"
+>[1]</SPAN
+></A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><FONT
+COLOR="RED"
+><A
+HREF="http://marc.theaimsgroup.com/?t=106354110900001&#38;r=1&#38;w=2"
+TARGET="_top"
+>http://marc.theaimsgroup.com/?t=106354110900001=1=2</A
+></FONT
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN477"
+HREF="#AEN477"
+><SPAN
+CLASS="footnote"
+>[2]</SPAN
+></A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><FONT
+COLOR="RED"
+><A
+HREF="http://bugzilla.gnome.org/show_bug.cgi?id=153517"
+TARGET="_top"
+>http://bugzilla.gnome.org/show_bug.cgi?id=153517</A
+></FONT
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN480"
+HREF="#AEN480"
+><SPAN
+CLASS="footnote"
+>[3]</SPAN
+></A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><FONT
+COLOR="RED"
+><A
+HREF="http://bugzilla.gnome.org/show_bug.cgi?id=161981"
+TARGET="_top"
+>http://bugzilla.gnome.org/show_bug.cgi?id=161981</A
+></FONT
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN483"
+HREF="#AEN483"
+><SPAN
+CLASS="footnote"
+>[4]</SPAN
+></A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><FONT
+COLOR="RED"
+><A
+HREF="http://bugzilla.gnome.org/show_bug.cgi?id=302577"
+TARGET="_top"
+>http://bugzilla.gnome.org/show_bug.cgi?id=302577</A
+></FONT
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN500"
+HREF="#AEN500"
+><SPAN
+CLASS="footnote"
+>[5]</SPAN
+></A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><FONT
+COLOR="RED"
+><A
+HREF="http://bugs.icu-project.org/trac/ticket/4298"
+TARGET="_top"
+>http://bugs.icu-project.org/trac/ticket/4298</A
+></FONT
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN503"
+HREF="#AEN503"
+><SPAN
+CLASS="footnote"
+>[6]</SPAN
+></A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><FONT
+COLOR="RED"
+><A
+HREF="http://bugs.icu-project.org/trac/ticket/4711"
+TARGET="_top"
+>http://bugs.icu-project.org/trac/ticket/4711</A
+></FONT
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN506"
+HREF="#AEN506"
+><SPAN
+CLASS="footnote"
+>[7]</SPAN
+></A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><FONT
+COLOR="RED"
+><A
+HREF="http://bugs.icu-project.org/trac/ticket/5057"
+TARGET="_top"
+>http://bugs.icu-project.org/trac/ticket/5057</A
+></FONT
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN518"
+HREF="#AEN518"
+><SPAN
+CLASS="footnote"
+>[8]</SPAN
+></A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><FONT
+COLOR="RED"
+><A
+HREF="http://bugs.icu-project.org/trac/ticket/5501"
+TARGET="_top"
+>http://bugs.icu-project.org/trac/ticket/5501</A
+></FONT
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN610"
+HREF="#AEN610"
+><SPAN
+CLASS="footnote"
+>[9]</SPAN
+></A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><FONT
+COLOR="RED"
+><A
+HREF="http://download.fedora.redhat.com/pub/fedora/linux/core/3/i386/os/RELEASE-NOTES-en.html"
+TARGET="_top"
+>http://download.fedora.redhat.com/pub/fedora/linux/core/3/i386/os/RELEASE-NOTES-en.html</A
+></FONT
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN615"
+HREF="#AEN615"
+><SPAN
+CLASS="footnote"
+>[10]</SPAN
+></A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><FONT
+COLOR="RED"
+><A
+HREF="http://cvs.fedora.redhat.com/viewcvs/*checkout*/rpms/firefox/devel/firefox.sh.in?rev=1.8"
+TARGET="_top"
+>http://cvs.fedora.redhat.com/viewcvs/*checkout*/rpms/firefox/devel/firefox.sh.in?rev=1.8</A
+></FONT
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN621"
+HREF="#AEN621"
+><SPAN
+CLASS="footnote"
+>[11]</SPAN
+></A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><FONT
+COLOR="RED"
+><A
+HREF="http://cvs.fedora.redhat.com/viewcvs/*checkout*/rpms/firefox/devel/firefox.sh.in?rev=1.11"
+TARGET="_top"
+>http://cvs.fedora.redhat.com/viewcvs/*checkout*/rpms/firefox/devel/firefox.sh.in?rev=1.11</A
+></FONT
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN641"
+HREF="#AEN641"
+><SPAN
+CLASS="footnote"
+>[12]</SPAN
+></A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><FONT
+COLOR="RED"
+><A
+HREF="http://mail.lug.lk/lurker/message/20060410.130454.19cefb01.en.html"
+TARGET="_top"
+>http://mail.lug.lk/lurker/message/20060410.130454.19cefb01.en.html</A
+></FONT
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN644"
+HREF="#AEN644"
+><SPAN
+CLASS="footnote"
+>[13]</SPAN
+></A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><FONT
+COLOR="RED"
+><A
+HREF="https://bugzilla.redhat.com/show_bug.cgi?id=200728"
+TARGET="_top"
+>https://bugzilla.redhat.com/show_bug.cgi?id=200728</A
+></FONT
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN647"
+HREF="#AEN647"
+><SPAN
+CLASS="footnote"
+>[14]</SPAN
+></A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><FONT
+COLOR="RED"
+><A
+HREF="http://www.openoffice.org/issues/show_bug.cgi?id=68047"
+TARGET="_top"
+>http://www.openoffice.org/issues/show_bug.cgi?id=68047</A
+></FONT
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN680"
+HREF="#AEN680"
+><SPAN
+CLASS="footnote"
+>[15]</SPAN
+></A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><FONT
+COLOR="RED"
+><A
+HREF="http://code.google.com/p/ibus/"
+TARGET="_top"
+>http://code.google.com/p/ibus/</A
+></FONT
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN683"
+HREF="#AEN683"
+><SPAN
+CLASS="footnote"
+>[16]</SPAN
+></A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><FONT
+COLOR="RED"
+><A
+HREF="http://www.m17n.org/"
+TARGET="_top"
+>http://www.m17n.org/</A
+></FONT
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN688"
+HREF="#AEN688"
+><SPAN
+CLASS="footnote"
+>[17]</SPAN
+></A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><FONT
+COLOR="RED"
+><A
+HREF="http://sourceforge.net/mailarchive/message.php?msg_id=919364"
+TARGET="_top"
+>http://sourceforge.net/mailarchive/message.php?msg_id=919364</A
+></FONT
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN840"
+HREF="#AEN840"
+><SPAN
+CLASS="footnote"
+>[18]</SPAN
+></A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><FONT
+COLOR="RED"
+><A
+HREF="http://lists.mysql.com/internals/34303"
+TARGET="_top"
+>http://lists.mysql.com/internals/34303</A
+></FONT
+></TD
+></TR
+></TABLE
+></BODY
+></HTML
+>
